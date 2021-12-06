@@ -1,0 +1,25 @@
+.pet_img {
+    height: 300px;
+    width: 100%;
+}
+
+.bottom {
+    padding-bottom: 10px;
+}
+
+.pet-info {
+    font-size: 30px;
+}
+
+.review-title {
+    font-size: 30px;
+    color: blue;
+}
+
+.card-bottom-margin {
+    margin-bottom: 20px;
+}
+
+.apply-button {
+    width: 100%;
+}
