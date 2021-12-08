@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import PetDetailComponent from "./component/petDetail/petDetailComponent"
+import PetFinder from "./component/petFinder/petFinder";
+
 
 function App() {
   return (
-    <PetDetailComponent/>
+      <PetFinder/>
+
   );
 }
 

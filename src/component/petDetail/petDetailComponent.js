@@ -52,11 +52,10 @@ class PetDetailComponent extends React.Component {
     render() {
         return(
             <div className="container-fluid">
-                <NavbarComponent/>
                 <div className="bottom">
-                    <div className="row">
+                    <div className="row" >
                         <div className="col-9">
-                            <div className="card">
+                            <div className="card col-margin-left">
                                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                                     <ol className="carousel-indicators">
                                         <li data-target="#carouselExampleIndicators" data-slide-to="0"
@@ -175,9 +174,10 @@ class PetDetailComponent extends React.Component {
 
                             { this.state.applications.length !== 0 && this.state.applications.map((application, i) =>
 
-                                <a className="list-group-item">{application.username}</a>)
+                                <a className="list-group-item col-margin-right">{application.username}</a>)
 
                             }
+                            <div className="col-margin-right">
                             <button className="apply-button btn-primary"
                                     onClick={() => this.createNewApplication({
                                         userId: 2,
@@ -185,6 +185,7 @@ class PetDetailComponent extends React.Component {
                                         businessTitle: "dog"})}>
 
                             apply now</button>
+                            </div>
                         </div>
                     </div>
 
