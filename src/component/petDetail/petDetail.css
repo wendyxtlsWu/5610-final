@@ -34,3 +34,13 @@
 .col-margin-right {
     margin-right: -13px;
 }
+
+.petImages {
+    height: 400px;
+    width: 100%;
+}
+
+.review-link {
+    color: #2394eb;
+    cursor: pointer;
+}
