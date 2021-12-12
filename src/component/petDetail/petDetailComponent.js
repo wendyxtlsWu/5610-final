@@ -185,7 +185,7 @@ class PetDetailComponent extends React.Component {
                                 <a className="list-group-item col-margin-right">{application.username}</a>)
                             }
 
-                            {/*{ this.state.localDetails.foster &&*/}
+                            {/*{ this.state.localDetails.foster && this.props.currentUser.role === "ADOPTER" && */}
                                 <div className="col-margin-right">
                                     <button className="apply-button btn-primary"
                                             onClick={() => this.createNewApplication({

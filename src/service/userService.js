@@ -41,3 +41,15 @@ export const logout = () =>
         method: 'POST',
         credentials: "include"
     })
+
+export const getProfile = () =>
+    fetch(`${SERVER_URL}/profile`, {
+        method: 'POST',
+        credentials: "include"
+    }).then(response => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            return null
+        }
+    })
