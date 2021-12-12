@@ -53,3 +53,23 @@ export const getProfile = () =>
             return null
         }
     })
+
+// export const getUserProfile = (userId) =>
+//     fetch(`${SERVER_URL}/profile/${userId}`)
+//         .then(response => response.json())
+//
+// export const getMembers = () =>
+//     fetch(`${SERVER_URL}/users`)
+//         .then(response => response.json())
+//
+export const updateProfile = async (user) => {
+    let response = await fetch(`${SERVER_URL}/api/users/${user.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: {
+            "content-type": "application/json"
+        },
+        credentials: "include"
+    })
+    return await response.json()
+}
