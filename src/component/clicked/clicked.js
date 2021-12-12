@@ -5,6 +5,8 @@ import PetDetailComponent from "../petDetail/petDetailComponent";
 import LoginComponent from "../loginAndRegister/loginComponent";
 import RegisterComponent from "../loginAndRegister/registerComponent";
 import {logout, getProfile} from "../../service/userService";
+import homePage from "../home/homePage";
+import ProfilePageComponent from "../users/ProfilePageComponent";
 
 class Clicked extends React.Component {
     state = {
@@ -53,6 +55,10 @@ class Clicked extends React.Component {
                             currentUser={this.state.currentUser}
                             handleLogout={this.handleLogout}/>}/>
 
+                    <Route path="/" exact={true} render={(props) =>
+                        <homePage
+                            {...props}
+                            currentUser={this.state.currentUser}/>}/>
 
                     {/*// pass the props and the setCurrentUser function to components*/}
                     <Route path={"/login"} exact={true} render={(props) =>
@@ -61,6 +67,12 @@ class Clicked extends React.Component {
                     <Route path="/register" exact={true} render={(props) =>
                         <RegisterComponent
                             {...props}
+                            setCurrentUser={this.setCurrentUser}/>}/>
+
+                    <Route path="/profile" exact={true} render={(props) =>
+                        <ProfilePageComponent
+                            {...props}
+                            userId={this.state.currentUser.id}
                             setCurrentUser={this.setCurrentUser}/>}/>
 
                     <Route path="/details" exact={true} render={(props) =>
