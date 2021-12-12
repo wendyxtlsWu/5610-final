@@ -1,10 +1,10 @@
 import './App.css';
-import PetFinder from "./component/petFinder/petFinder";
+import Clicked from "./component/clicked/clicked";
 
 
 function App() {
   return (
-      <PetFinder/>
+      <Clicked/>
 
   );
 }

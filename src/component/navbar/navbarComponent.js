@@ -15,7 +15,7 @@ class NavbarComponent extends React.Component {
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <a className="navbar-brand nav-margin" href="#">PetFinder</a>
+                    <a className="navbar-brand nav-margin" href="#">Clicked</a>
                     <div className="collapse navbar-collapse nav-margin" id="navbarTogglerDemo03">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-margin">
                             <li className="nav-item item-margin">
