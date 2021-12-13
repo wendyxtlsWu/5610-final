@@ -73,3 +73,7 @@ export const updateProfile = async (user) => {
     })
     return await response.json()
 }
+
+export const getMembers = () =>
+    fetch(`${SERVER_URL}/users`)
+        .then(response => response.json())

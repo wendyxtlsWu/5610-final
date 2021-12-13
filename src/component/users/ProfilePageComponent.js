@@ -1,6 +1,4 @@
 import React from 'react';
-import LocalBusinessListComponent from "../localBusiness/LocalBusinessListComponent";
-import ReviewListComponent from "../reviews/ReviewListComponent";
 import {getProfile, updateProfile} from "../../service/userService";
 
 class currentUserPageComponent extends React.Component {

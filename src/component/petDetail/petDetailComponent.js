@@ -160,14 +160,12 @@ class PetDetailComponent extends React.Component {
                                     <button type="submit"
                                             className="btn btn-primary"
                                             onClick={() => this.createNewReview({
-                                                // userId: this.props.currentUser.id,
-                                                // username: this.props.currentUser.username,
+                                                userId: this.props.currentUser.id,
+                                                username: this.props.currentUser.username,
                                                 // petTitle: this.state.details.name,
-                                                // content: this.state.yourComment,
-                                            userId: 2,
-                                            username: "hiiii",
-                                            petTitle: "dog",
-                                            content: this.state.yourComment})}>
+                                                petTitle: "dog",
+                                                content: this.state.yourComment
+                                            })}>
                                             Submit
                                     </button>
                                 </form>
@@ -189,8 +187,8 @@ class PetDetailComponent extends React.Component {
                                 <div className="col-margin-right">
                                     <button className="apply-button btn-primary"
                                             onClick={() => this.createNewApplication({
-                                                userId: 2,
-                                                username: "hiiii",
+                                                userId: this.props.currentUser.id,
+                                                username: this.props.currentUser.username,
                                                 petTitle: "dog"
                                             })}>
 
