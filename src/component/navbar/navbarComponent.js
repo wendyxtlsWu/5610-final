@@ -16,9 +16,14 @@ class NavbarComponent extends React.Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <a className="navbar-brand nav-margin" href="#">Clicked</a>
+
                     {   this.props.currentUser.username === '' &&
                         <div className="collapse navbar-collapse nav-margin" id="navbarTogglerDemo03">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-margin">
+                                <li className="nav-item item-margin">
+                                    <a className="nav-link active" aria-current="page" href="/search">
+                                        <i className="fas fa-search fa-lg"></i></a>
+                                </li>
                                 <li className="nav-item item-margin">
                                     <a className="nav-link active" aria-current="page" href="/login">Login</a>
                                 </li>
@@ -33,21 +38,40 @@ class NavbarComponent extends React.Component {
                     }
                     {
                         this.props.currentUser.username !== '' &&
-                        <div className="dropdown show">
-                            <button className="btn btn-secondary dropdown-toggle ml-1" type="button"
-                                    id="dropdownMenuButton"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span className="">
-                                    Hello {this.props.currentUser.username}
-                                </span>
-                            </button>
-                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" href="/profile">Profile</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="/" onClick={this.props.handleLogout}>Log out</a>
-                            </div>
-                        </div>
+
+                                <div className="collapse navbar-collapse nav-margin" id="navbarTogglerDemo03">
+                                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-margin">
+                                        <li className="nav-item item-margin">
+                                            <a className="nav-link active" aria-current="page" href="/search">
+                                                <i className="fas fa-search fa-lg"></i></a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="nav-link disabled">Contact</a>
+                                        </li>
+                                        <div className="dropdown show">
+                                            <button className="btn btn-secondary dropdown-toggle ml-1" type="button"
+                                                    id="dropdownMenuButton"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span className="">
+                                            Hello {this.props.currentUser.username}
+                                        </span>
+                                            </button>
+                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a className="dropdown-item" href="/profile">Profile</a>
+                                                <div className="dropdown-divider"></div>
+                                                <a className="dropdown-item" href="/" onClick={this.props.handleLogout}>Log out</a>
+                                            </div>
+                                        </div>
+                                    </ul>
+
+                                </div>
+
+
                     }
+
+
+
+
                 </div>
             </nav>
         )

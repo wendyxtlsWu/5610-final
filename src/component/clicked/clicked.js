@@ -4,9 +4,13 @@ import NavbarComponent from "../navbar/navbarComponent";
 import PetDetailComponent from "../petDetail/petDetailComponent";
 import LoginComponent from "../loginAndRegister/loginComponent";
 import RegisterComponent from "../loginAndRegister/registerComponent";
+
 import {logout, getProfile} from "../../service/userService";
 import homePage from "../home/homePage";
 import ProfilePageComponent from "../users/ProfilePageComponent";
+
+import SearchComponent from "../search/searchComponent";
+
 
 class Clicked extends React.Component {
     state = {
@@ -68,6 +72,12 @@ class Clicked extends React.Component {
                         <RegisterComponent
                             {...props}
                             setCurrentUser={this.setCurrentUser}/>}/>
+                    <Route path="/search" render={(props) =>
+                        <SearchComponent
+                            {...props}
+                            />}/>
+                    {/*keyword={props.match.params.keyword === undefined ? '': props.match.params.keyword}*/}
+                    {/*location={props.match.params.location === undefined ? '': props.match.params.location}*/}
 
                     <Route path="/profile" exact={true} render={(props) =>
                         <ProfilePageComponent
