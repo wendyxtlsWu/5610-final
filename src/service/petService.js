@@ -1,11 +1,11 @@
 import {API_KEY, PUBLIC_API, PETS_PROFILE_API_URL} from "../API/api";
 
-export const findDetailById = async (id) => {
+export const findDetailById = async (id, accessToken) => {
     let response = await fetch(`${PUBLIC_API}/animals/${id}`, {
         method: 'GET',
         headers: {
             'ContentType': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`,
+            'Authorization': `Bearer ${accessToken}`,
         }
     })
     return response.json();

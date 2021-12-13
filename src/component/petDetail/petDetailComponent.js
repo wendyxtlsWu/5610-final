@@ -4,6 +4,7 @@ import NavbarComponent from "../navbar/navbarComponent";
 import reviewService from "../../service/reviewService";
 import applicationService from "../../service/applicationService";
 import petService from "../../service/petService";
+import {API_KEY, API_SECRET_KEY} from "../../API/api";
 
 class PetDetailComponent extends React.Component {
     state = {
@@ -12,24 +13,43 @@ class PetDetailComponent extends React.Component {
         yourComment: "No comments",
         applications:[],
         localDetails: {},
+        accessToken: null,
     }
 
     componentDidMount() {
-        // petService.findDetailById(this.props.id)
-        //     .then(response => this.setState({
-        //         details: response
-        //     }))
+        this.fetchAccessToken();
 
         // petService.findLocalDetailById(this.props.id)
         //     .then(response => this.setState({
         //         localDetails: response
         //     }))
 
-
-        //this.findReviewsForPet();
-        //this.findApplicationsForPet();
+        // this.findReviewsForPet();
+        // this.findApplicationsForPet();
         this.findReviews();
         this.findApplications();
+    }
+
+    fetchAccessToken = async () => {
+        const params = new URLSearchParams();
+        params.append("grant_type", "client_credentials");
+        params.append("client_id", API_KEY);
+        params.append("client_secret", API_SECRET_KEY);
+        const petfinderRes = await fetch(
+            "https://api.petfinder.com/v2/oauth2/token",
+            {
+                method: "POST",
+                body: params,
+            }
+        )
+        const json = await petfinderRes.json()
+        console.log(json.access_token)
+        this.setState({accessToken: json.access_token})
+
+        petService.findDetailById(this.props.id, json.access_token)
+            .then(response => this.setState({
+                details: response
+            }))
     }
 
     // findReviewsForPet = () => {
