@@ -2,9 +2,10 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {getRecentReviews} from '../../service/reviewService'
 
-class recentComment extends React.Component {
+class RecentComment extends React.Component {
     componentDidMount() {
         getRecentReviews().then(reviews => {
+            console.log(reviews);
             this.setState({
                 reviews: reviews
             })
@@ -80,4 +81,4 @@ class recentComment extends React.Component {
     }
 }
 
-export default recentComment
+export default RecentComment

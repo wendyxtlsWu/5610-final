@@ -54,16 +54,16 @@ export const getProfile = () =>
         }
     })
 
-// export const getUserProfile = (userId) =>
-//     fetch(`${SERVER_URL}/profile/${userId}`)
-//         .then(response => response.json())
-//
-// export const getMembers = () =>
-//     fetch(`${SERVER_URL}/users`)
-//         .then(response => response.json())
-//
+export const getUserProfile = (userId) =>
+    fetch(`${SERVER_URL}/profile/${userId}`)
+        .then(response => response.json())
+
+export const getMembers = () =>
+    fetch(`${SERVER_URL}/users`)
+        .then(response => response.json())
+
 export const updateProfile = async (user) => {
-    let response = await fetch(`${SERVER_URL}/api/users/${user.id}`, {
+    let response = await fetch(`${SERVER_URL}/api/users/${user.userId}`, {
         method: 'PUT',
         body: JSON.stringify(user),
         headers: {
@@ -73,7 +73,3 @@ export const updateProfile = async (user) => {
     })
     return await response.json()
 }
-
-export const getMembers = () =>
-    fetch(`${SERVER_URL}/users`)
-        .then(response => response.json())
