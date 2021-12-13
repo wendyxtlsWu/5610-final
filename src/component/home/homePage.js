@@ -1,9 +1,9 @@
 import React from 'react';
-import recentComment from "./recentComment";
-import userList from "./userList";
+import RecentComment from "./recentComment";
+import UserList from "./userList";
 import {Link} from "react-router-dom";
 
-class homePage extends React.Component {
+class HomePage extends React.Component {
     componentDidMount() {
     }
 
@@ -36,14 +36,14 @@ class homePage extends React.Component {
                         <div className="row" style={{paddingTop: 15}}>
                             <div className="col-md-8 col-lg-8">
                                 {
-                                    <recentComment
+                                    <RecentComment
                                         history={this.props.history}
                                         currentUser={this.props.currentUser}/>
                                 }
                             </div>
                             <div className="col-md-1 col-lg-1 d-none d-md-block"></div>
                             <div className="col-md-3 col-lg-3 d-none d-md-block">
-                                <userList
+                                <UserList
                                     history={this.props.history}
                                     currentUser={this.props.currentUser}/>
                             </div>
@@ -82,4 +82,4 @@ class homePage extends React.Component {
     }
 }
 
-export default homePage
+export default HomePage

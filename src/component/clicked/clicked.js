@@ -7,7 +7,9 @@ import RegisterComponent from "../loginAndRegister/registerComponent";
 
 import {logout, getProfile} from "../../service/userService";
 import homePage from "../home/homePage";
+import HomePage from "../home/homePage";
 import ProfilePageComponent from "../users/ProfilePageComponent";
+import UserProfileComponent from "../users/UserProfileComponent";
 
 import SearchComponent from "../search/searchComponent";
 
@@ -60,9 +62,11 @@ class Clicked extends React.Component {
                             handleLogout={this.handleLogout}/>}/>
 
                     <Route path="/" exact={true} render={(props) =>
-                        <homePage
-                            {...props}
-                            currentUser={this.state.currentUser}/>}/>
+                        <HomePage {...props} currentUser={this.state.currentUser}/>
+                        // <homePage
+                        //     {...props}
+                        //     currentUser={this.state.currentUser}/>
+                    }/>
 
                     {/*// pass the props and the setCurrentUser function to components*/}
                     <Route path={"/login"} exact={true} render={(props) =>
@@ -82,7 +86,7 @@ class Clicked extends React.Component {
                     <Route path="/profile" exact={true} render={(props) =>
                         <ProfilePageComponent
                             {...props}
-                            userId={this.state.currentUser.id}
+                            userId={this.state.currentUser.userId}
                             setCurrentUser={this.setCurrentUser}/>}/>
 
                     <Route path="/details/:id" exact={true} render={(props) =>
@@ -92,7 +96,11 @@ class Clicked extends React.Component {
                             id={props.match.params.id}
                         />}/>
 
-
+                    <Route path="/profile/:uid" exact={true} render={(props) =>
+                        <UserProfileComponent
+                            {...props}
+                            userId={props.match.params.uid}
+                            currentUserId={this.state.currentUser.userId}/>}/>
                 </div>
             </BrowserRouter>
 

@@ -1,11 +1,8 @@
 import {
     API_KEY,
-    PUBLIC_SERVER_URL,
-    BUSINESSES_API_URL,
-    OWNERS_BUSINESSES_API_URL,
     PETS_APPLICATIONS_API_URL,
     APPLICATIONS_API_URL,
-    USERS_REVIEWS_API_URL, REVIEWS_API_URL, USERS_APPLICATIONS_API_URL
+    USERS_APPLICATIONS_API_URL
 } from "../API/api";
 
 
@@ -32,10 +29,21 @@ export const createApplication = async (petId, application) => {
 };
 
 export const findApplicationsForUser = async (userId) => {
-    let response = await fetch(USERS_APPLICATIONS_API_URL(userId))
-    return await response.json()
+    console.log(userId);
+    let response = await fetch(USERS_APPLICATIONS_API_URL(userId));
+    return await response.json();
 }
 
+export const updateApplication = async (application) => {
+    let response = await fetch(`${APPLICATIONS_API_URL}/${application.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(application),
+        headers: {
+            "content-type": "application/json"
+        }
+    })
+    return await response.json()
+}
 
 export const deleteApplication = async (applicationId) => {
     let response = await fetch(`${APPLICATIONS_API_URL}/${applicationId}`, {
@@ -46,5 +54,5 @@ export const deleteApplication = async (applicationId) => {
 
 
 export default {
-    findApplications, createApplication, findApplicationsForPet, findApplicationsForUser, deleteApplication
+    findApplications, createApplication, findApplicationsForPet, findApplicationsForUser, updateApplication, deleteApplication
 }
