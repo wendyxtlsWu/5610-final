@@ -104,11 +104,10 @@ class RegisterComponent extends React.Component {
                             <br/>
                             <input value={this.state.user.zipCode} placeholder="Zip code" type="zipCode" className="form-control border"
                                    onChange={(e) => {
-                                       const newFirstName = e.target.value
                                        this.setState(prevState => ({
                                            user: {
                                                ...prevState.user,
-                                               zipCode: newFirstName
+                                               zipCode: e.target.value
                                            }
                                        }))
                                    }
