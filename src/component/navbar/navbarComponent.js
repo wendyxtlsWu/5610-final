@@ -16,6 +16,7 @@ class NavbarComponent extends React.Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <a className="navbar-brand nav-margin" href="#">Clicked</a>
+
                     {   this.props.currentUser.username === '' &&
                         <div className="collapse navbar-collapse nav-margin" id="navbarTogglerDemo03">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-margin">
@@ -48,6 +49,26 @@ class NavbarComponent extends React.Component {
                             </div>
                         </div>
                     }
+
+                    <div className="collapse navbar-collapse nav-margin" id="navbarTogglerDemo03">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-margin">
+                            <li className="nav-item item-margin">
+                                <a className="nav-link active" aria-current="page" href="/search">
+                                    <i className="fas fa-search fa-lg"></i></a>
+                            </li>
+                            <li className="nav-item item-margin">
+                                <a className="nav-link active" aria-current="page" href="/login">Login</a>
+                            </li>
+                            <li className="nav-item item-margin">
+                                <a className="nav-link" href="/register">Signup</a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link disabled">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
                 </div>
             </nav>
         )
