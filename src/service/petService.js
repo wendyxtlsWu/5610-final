@@ -1,15 +1,19 @@
 import {API_KEY, petFinderClient, PETS_PROFILE_API_URL, PUBLIC_API} from "../API/api";
 
-export const findDetailById = async (id, accessToken) => {
-    let response = await fetch(`${PUBLIC_API}/animals/${id}`, {
-        method: 'GET',
-        headers: {
-            'ContentType': 'application/json',
-            'Authorization': `Bearer ${accessToken}`,
-        }
-    })
-    return response.json();
-};
+// export const findDetailById = async (id, accessToken) => {
+//     let response = await fetch(`${PUBLIC_API}/animals/${id}`, {
+//         method: 'GET',
+//         headers: {
+//             'ContentType': 'application/json',
+//             'Authorization': `Bearer ${accessToken}`,
+//         }
+//     })
+//     return response.json();
+// };
+
+export const findDetailById = async (id) => {
+    return await petFinderClient.animal.show(id);
+}
 
 export const findLocalDetailById = async (petId) => {
     let response = await fetch(PETS_PROFILE_API_URL(petId))

@@ -85,7 +85,7 @@ class Clicked extends React.Component {
                             userId={this.state.currentUser.id}
                             setCurrentUser={this.setCurrentUser}/>}/>
 
-                    <Route path="/details" exact={true} render={(props) =>
+                    <Route path="/details/:id" exact={true} render={(props) =>
                         <PetDetailComponent
                             {...props}
                             currentUser={this.state.currentUser}
