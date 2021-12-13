@@ -27,7 +27,8 @@ export const createReview = async (petId, review) => {
 
 export const findReviewsForUser = async (userId) => {
     let response = await fetch(USERS_REVIEWS_API_URL(userId))
-    return await response.json()
+    return await response.json();
+    // return response.json()
 }
 
 export const updateReview = async (review) => {
@@ -50,7 +51,7 @@ export const deleteReview = async (reviewId) => {
 
 export const getRecentReviews = async () => {
     let response = await fetch(`${REVIEWS_API_URL}`, {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'content-type': 'application/json'
         }
