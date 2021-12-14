@@ -14,6 +14,15 @@ class PetDetailComponent extends React.Component {
         accessToken: null,
     }
 
+    // constructor(props) {
+    //     super(props);
+    //     petService.findDetailById(this.props.id)
+    //         .then(response => this.setState({
+    //             details: response
+    //         }))
+    // }
+
+
     componentDidMount() {
         // petService.findLocalDetailById(this.props.id)
         //     .then(response => this.setState({
@@ -71,8 +80,10 @@ class PetDetailComponent extends React.Component {
                     <div className="row" >
                         <div className="col-9">
                             <div className="card col-margin-left">
+
                                 {/*<img className="card-img-top" src={this.state.details.photos}/>*/}
                                 <img className="card-img-top" src="https://www.burgesspetcare.com/wp-content/uploads/2019/11/pets.jpg"/>
+
                                 <div className="card-body">
                                     <h5 className="card-title">{this.state.details.name}</h5>
                                     <p className="card-text">{this.state.details.description}</p>

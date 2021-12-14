@@ -13,6 +13,8 @@ import UserProfileComponent from "../users/UserProfileComponent";
 
 import SearchComponent from "../search/searchComponent";
 
+import * as qs from "query-string";
+
 
 class Clicked extends React.Component {
     state = {
@@ -76,12 +78,20 @@ class Clicked extends React.Component {
                         <RegisterComponent
                             {...props}
                             setCurrentUser={this.setCurrentUser}/>}/>
+
                     <Route path="/search" render={(props) =>
+
                         <SearchComponent
                             {...props}
-                            />}/>
-                    {/*keyword={props.match.params.keyword === undefined ? '': props.match.params.keyword}*/}
-                    {/*location={props.match.params.location === undefined ? '': props.match.params.location}*/}
+                            type={qs.parse(props.location.search).type === undefined ? '': qs.parse(props.location.search).type}
+                            name={qs.parse(props.location.search).name === undefined ? '': qs.parse(props.location.search).name}
+                            age={qs.parse(props.location.search).age === undefined ? '': qs.parse(props.location.search).age}
+                            gender={qs.parse(props.location.search).gender === undefined ? '': qs.parse(props.location.search).gender}
+                            size={qs.parse(props.location.search).size === undefined ? '': qs.parse(props.location.search).size}
+                            />
+
+                    }/>
+
 
                     <Route path="/profile" exact={true} render={(props) =>
                         <ProfilePageComponent

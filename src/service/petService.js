@@ -1,4 +1,4 @@
-import {API_KEY, petFinderClient, PETS_PROFILE_API_URL, PUBLIC_API} from "../API/api";
+import {petFinderClient, PETS_APPLICATIONS_API_URL, PETS_PROFILE_API_URL, SERVER_URL} from "../API/api";
 
 // export const findDetailById = async (id, accessToken) => {
 //     let response = await fetch(`${PUBLIC_API}/animals/${id}`, {
@@ -12,6 +12,7 @@ import {API_KEY, petFinderClient, PETS_PROFILE_API_URL, PUBLIC_API} from "../API
 // };
 
 export const findDetailById = async (id) => {
+
     return await petFinderClient.animal.show(id);
 }
 
@@ -20,32 +21,76 @@ export const findLocalDetailById = async (petId) => {
     return await response.json()
 };
 
-
 export const searchPets = async (search) => {
-    let searchParams = {limit:100}
-    // {
-    //     type: search.type,
-    //     name: search.name,
-    //     size: search.size,
-    //     age: search.age,
-    //     gender: search.gender,
-    //     limit: 100,
-    // }
+    // console.log("service", search)
+    // without using "await", promise type result will be returned
+    // An async function consists of two main keywords async and await. They keyword async is used to make a function asynchronous.
+    // The await keyword will ask the execution to wait until the defined task gets executed
+    let localResult = await searchLocalPets(search)
+    let remoteResult = await searchRemotePets(search)
+    // console.log("local", localResult)
+    // console.log("remote", remoteResult)
+    // return [].concat(localResult, remoteResult)
+    return {
+        local:localResult,
+        remote: remoteResult}
 
+    }
+
+
+
+// search local db for targeted pets
+const searchLocalPets =  async (searchParams) => {
+    // await fetch(`${SERVER_URL}/search/pets`,{
+    //     method: 'POST',
+    //         body: JSON.stringify(searchParams),
+    //         headers: {
+    //         'content-type': 'application/json'
+    //         },
+    //         // credentials: "include"
+    // }).then(response => {
+    //     if (response.ok) {
+    //         let result = response.json()
+    //         console.log("xxx", result)
+    //         return result
+    //     } else {
+    //         console.log(response)
+    //     }
+    // })
+
+    let response = await fetch(`${SERVER_URL}/search/pets`,{
+        method: 'POST',
+        body: JSON.stringify(searchParams),
+        headers: {
+            'content-type': 'application/json'
+        },
+        // credentials: "include"
+    })
+    if (response.ok) {
+        return response.json()
+    } else {
+      console.log(response)
+    }
+}
+// search remote API for pets
+const searchRemotePets = async (search) => {
+    // console.log("searchParams", searchParams)
+    let searchParams = {limit:100}
+    // only search remote API with non-empty filter params
     for (const prop in search){
-        if (search[prop] !== ''){
+        if (search[prop] !== '' && search[prop] !== undefined){
             searchParams[prop] = search[prop]
         }
     }
-    console.log("searchParams", searchParams)
-
     let apiResult = await petFinderClient.animal.search(searchParams)
         .catch(err => {
         console.log(err.request, err.response, err.invalidParams);
         // check errors
         })
     // console.log("apiResult", apiResult)
-    return apiResult.data
+    // console.log("animals", apiResult.data.animals)
+     // apiResult.data.animals : animals meet requirements
+    return apiResult.data.animals
 };
 
 
