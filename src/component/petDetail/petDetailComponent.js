@@ -3,6 +3,7 @@ import petDetail from './petDetail.css';
 import reviewService from "../../service/reviewService";
 import applicationService from "../../service/applicationService";
 import petService from "../../service/petService";
+import FooterComponent from "../navbar/footerComponent";
 
 class PetDetailComponent extends React.Component {
     state = {
@@ -180,9 +181,11 @@ class PetDetailComponent extends React.Component {
                                     Apply now</button>
                                 </div>
                             }
+
                         </div>
                     </div>
                 </div>
+                <FooterComponent/>
             </div>
         );
     }

@@ -6,7 +6,17 @@
     margin-right: 15px;
 }
 
-.footer-bootom {
+.footer-bottom {
     bottom: 0;
-    position: absolute;
+    /*position: absolute;*/
+    background-color:#2e2d2d;
+
+}
+
+.center {
+    text-align: center;
+}
+
+.contact-us {
+    color: #61dafb;
 }
