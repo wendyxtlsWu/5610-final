@@ -72,7 +72,9 @@ class Clicked extends React.Component {
 
                     {/*// pass the props and the setCurrentUser function to components*/}
                     <Route path={"/login"} exact={true} render={(props) =>
-                        <LoginComponent {...props} setCurrentUser = {this.setCurrentUser}/>}/>
+                        <LoginComponent
+                            {...props}
+                            setCurrentUser = {this.setCurrentUser}/>}/>
 
                     <Route path="/register" exact={true} render={(props) =>
                         <RegisterComponent

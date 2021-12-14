@@ -12,8 +12,9 @@ import {petFinderClient, PETS_APPLICATIONS_API_URL, PETS_PROFILE_API_URL, SERVER
 // };
 
 export const findDetailById = async (id) => {
-
-    return await petFinderClient.animal.show(id);
+    let pet = await petFinderClient.animal.show(id);
+    // console.log("pet", pet)
+    return pet;
 }
 
 export const findLocalDetailById = async (petId) => {
