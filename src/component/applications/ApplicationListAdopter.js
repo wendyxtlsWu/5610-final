@@ -5,8 +5,9 @@ import {
     updateApplication,
     deleteApplication
 } from "../../service/applicationService";
+import {Link} from "react-router-dom";
 
-class ApplicationListVolunteer extends React.Component {
+class ApplicationListAdopter extends React.Component {
 
     componentDidMount() {
         // if (this.props.userType == "SHELTER/RESCUE") {
@@ -93,7 +94,9 @@ class ApplicationListVolunteer extends React.Component {
                         this.state.applications && this.state.applications.map((application, idx) =>
                             <li className={'list-group-item'} key={idx}>
                                 <div>
-                                    Applicant: {application.username}
+                                    <Link style={{textDecoration: 'none'}} to={`/profile/${application.userId}`}>
+                                        Applicant: {application.username}
+                                    </Link>
                                     {
                                         this.props.ownPage &&
                                         <span className="float-right"
@@ -111,7 +114,9 @@ class ApplicationListVolunteer extends React.Component {
                                 {
                                     this.state.editingId !== application.id &&
                                     <div>
-                                        {`Pet name: ${application.petTitle}`}
+                                        <Link style={{textDecoration: 'none'}} to={`/details/${application.petId}`}>
+                                            {`Pet name: ${application.petTitle}`}
+                                        </Link>
                                     </div>
                                 }
                                 {
@@ -157,4 +162,4 @@ class ApplicationListVolunteer extends React.Component {
     }
 }
 
-export default ApplicationListVolunteer;
+export default ApplicationListAdopter;

@@ -70,7 +70,7 @@ class ReviewListComponent extends React.Component {
         return (
             <div className="container mb-5">
                 <h3 className="text-left ml-1"
-                    style={{color: '#37f046', fontFamily: 'Arial', fontWeight: '500'}}>Reviews</h3>
+                    style={{fontFamily: 'Arial', fontWeight: '500'}}>Reviews</h3>
                 <ul className="list-group">
                     {
                         this.state.reviews && this.state.reviews.length === 0 &&
@@ -92,10 +92,13 @@ class ReviewListComponent extends React.Component {
                                     <div className="col-md-8">
                                         <div className="card-body pt-0 px-1">
                                             <h5 className="card-title text-truncate text-left"
-                                                style={{color: '#1989e3', fontFamily: 'Oswald', fontWeight: '200'}}>
+                                                style={{color: '#1989e3', fontFamily: 'Monospace', fontWeight: '200'}}>
                                               <span style={{cursor: 'pointer'}}
                                                     onClick={() => this.showPet(review.petId)}>
-                                                {review.petTitle}
+                                                  <Link style={{textDecoration: 'none'}}
+                                                        to={`/details/${review.petId}`}>
+                                                        {review.petTitle}
+                                                  </Link>
                                               </span>
                                                 {
                                                     this.props.ownPage &&

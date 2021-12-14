@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewListComponent from "../reviews/ReviewListComponent";
 import {getProfile, updateProfile} from "../../service/userService";
-import ApplicationListVolunteer from "../applications/ApplicationListVolunteer";
+import ApplicationListAdopter from "../applications/ApplicationListAdopter";
 import ApplicationListAll from "../applications/ApplicationListAll";
 
 class ProfilePageComponent extends React.Component {
@@ -184,7 +184,7 @@ class ProfilePageComponent extends React.Component {
                         }
                         {
                             this.state.currentUser.userType === "ADOPTER" &&
-                            <ApplicationListVolunteer
+                            <ApplicationListAdopter
                                 history={this.props.history}
                                 userId={this.state.currentUser.userId}
                                 ownPage={true}

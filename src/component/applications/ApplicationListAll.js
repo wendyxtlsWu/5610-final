@@ -5,6 +5,7 @@ import {
     updateApplication,
     deleteApplication
 } from "../../service/applicationService";
+import {Link} from "react-router-dom";
 
 class ApplicationListAll extends React.Component {
 
@@ -93,7 +94,9 @@ class ApplicationListAll extends React.Component {
                         this.state.applications && this.state.applications.map((application, idx) =>
                             <li className={'list-group-item'} key={idx}>
                                 <div>
-                                    Applicant: {application.username}
+                                    <Link style={{textDecoration: 'none'}} to={`/profile/${application.userId}`}>
+                                        Applicant: {application.username}
+                                    </Link>
                                     {
                                         this.props.ownPage &&
                                         <span className="float-right"
@@ -112,23 +115,25 @@ class ApplicationListAll extends React.Component {
                                 {
                                     this.state.editingId !== application.id &&
                                     <div>
-                                        {`Pet name: ${application.petTitle}`}
-                                    </div>
-                                }
+                                        <Link style={{textDecoration: 'none'}} to={`/details/${application.petId}`}>
+                                            {`Pet name: ${application.petTitle}`}
+                                        </Link>
+                                    </div>}
                                 {
                                     this.state.editingId === application.id &&
                                     <div>
                                         <div>
                                             <span style={{marginRight: '8px'}}>{`Pet name: `}</span>
-                                            <input className={'rounded'} value={this.state.application.petTitle} onChange={e => {
-                                                this.setState(prevState => ({
-                                                    ...prevState,
-                                                    application: {
-                                                        ...prevState.application,
-                                                        petTitle: e.target.value,
-                                                    }
-                                                }))
-                                            }}/>
+                                            <input className={'rounded'} value={this.state.application.petTitle}
+                                                   onChange={e => {
+                                                       this.setState(prevState => ({
+                                                           ...prevState,
+                                                           application: {
+                                                               ...prevState.application,
+                                                               petTitle: e.target.value,
+                                                           }
+                                                       }))
+                                                   }}/>
                                         </div>
                                         <div className={'mt-1'}>
                                             <button

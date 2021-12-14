@@ -2,7 +2,7 @@ import React from 'react';
 // import ReviewListComponent from "../reviews/ReviewListComponent";
 import {getUserProfile} from "../../service/userService";
 import {findReviewsForUser} from "../../service/reviewService";
-// import ApplicationListVolunteer from "../applications/ApplicationListVolunteer";
+// import ApplicationListAdopter from "../applications/ApplicationListAdopter";
 // import ApplicationListAll from "../applications/ApplicationListAll";
 
 class UserProfileComponent extends React.Component {
@@ -79,7 +79,7 @@ class UserProfileComponent extends React.Component {
                             {/*    }*/}
                             {/*    {*/}
                             {/*        this.state.profile.userType === "VOLUNTEER" &&*/}
-                            {/*        <ApplicationListVolunteer*/}
+                            {/*        <ApplicationListAdopter*/}
                             {/*            userType={this.state.profile.userType}*/}
                             {/*            userId={this.state.profile.userId}*/}
                             {/*            ownPage={false}/>*/}
