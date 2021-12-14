@@ -14,6 +14,7 @@ import UserProfileComponent from "../users/UserProfileComponent";
 import SearchComponent from "../search/searchComponent";
 
 import * as qs from "query-string";
+import FooterComponent from "../navbar/footerComponent";
 
 
 class Clicked extends React.Component {
@@ -69,6 +70,10 @@ class Clicked extends React.Component {
                         //     {...props}
                         //     currentUser={this.state.currentUser}/>
                     }/>
+
+                    <Route path="/" >
+                        <FooterComponent/>
+                    </Route>
 
                     {/*// pass the props and the setCurrentUser function to components*/}
                     <Route path={"/login"} exact={true} render={(props) =>

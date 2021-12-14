@@ -75,38 +75,49 @@ class PetDetailComponent extends React.Component {
                         <div className="col-9">
                             <div className="card col-margin-left">
                                 {/*{console.log("details", this.state.details)}*/}
-                                {JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?
-                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="600px"
-                                         width="auto"/> :
-                                    <img className="card-img-top" src="https://www.burgesspetcare.com/wp-content/uploads/2019/11/pets.jpg"/>}
+                                {/*{JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?*/}
+                                { this.state.details && this.state.details.photos &&
+                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="550px"
+                                         width="auto"/>
+                                }
 
                                 <div className="card-body">
-                                    <h5 className="card-title">{this.state.details.name}</h5>
+                                    <h5 className="card-title title-bold">{this.state.details.name}</h5>
                                     <p className="card-text">{this.state.details.description}</p>
                                 </div>
                                 <ul className="list-group list-group-flush">
-                                    <li className="list-group-item">{this.state.details.type}</li>
-                                    <li className="list-group-item">{this.state.details.age}</li>
-                                    <li className="list-group-item">{this.state.details.gender}</li>
-                                    <li className="list-group-item">{this.state.details.size}</li>
+                                    <li className="list-group-item">Type: {this.state.details.type}</li>
+                                    <li className="list-group-item">Age: {this.state.details.age}</li>
+                                    <li className="list-group-item">Gender: {this.state.details.gender}</li>
+                                    <li className="list-group-item">Size: {this.state.details.size}</li>
                                 </ul>
                             </div>
                             <h4 className="review-title">Reviews</h4>
                             <div className="row">
                                 {
                                     this.state.reviews.length === 0 &&
-                                    <h4 className="review-title">No Review</h4>
+                                    <h4 className="review-title review-subtitle">No Review</h4>
                                 }
                                 {
                                     this.state.reviews && this.state.reviews.map((review, i) =>
                                     <div className="col-sm-4 card-bottom-margin" key={i}>
                                         <div className="card">
                                             <div className="card-body">
-                                                <h5 className="card-title">
+                                                { this.props.currentUser.username !== '' &&
+                                                <h5 className="card-title title-pointer">
                                                     <span onClick={() => this.gotoProfile(review.userId)}>
                                                         {review.username}
                                                     </span>
                                                 </h5>
+                                                }
+                                                {
+                                                    this.props.currentUser.username == '' &&
+                                                    <h5 className="card-title">
+
+                                                        {review.username}
+
+                                                    </h5>
+                                                }
                                                 <p className="card-text">{review.content}</p>
                                             </div>
                                         </div>
@@ -135,7 +146,7 @@ class PetDetailComponent extends React.Component {
                                                 username: this.props.currentUser.username,
                                                 petTitle: this.state.details.name,
                                                 content: this.state.yourComment,
-                                                // petImageURL: this.state.details.photos[0].large
+                                                petImageURL: this.state.details.photos[0].large
                                             })}>
                                             Submit
                                     </button>
@@ -166,7 +177,7 @@ class PetDetailComponent extends React.Component {
                                                 petImageURL: this.state.details.photos[0].large
                                             })}>
 
-                                    apply now</button>
+                                    Apply now</button>
                                 </div>
                             }
                         </div>

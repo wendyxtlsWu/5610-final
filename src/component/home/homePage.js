@@ -63,7 +63,7 @@ class HomePage extends React.Component {
                             <a href="mailto:wu.jingj@northeastern.edu">Jingjing Wu</a> |
                             <a href="mailto:lu.xiaow@northeastern.edu">Xiaowei Lu</a>
 
-                        {/*<div>*/}
+
                         {/*    <a href="mailto:bai.xue1@northeastern.edu">Xue Bai</a>*/}
                         {/*</div>*/}
 
@@ -78,6 +78,7 @@ class HomePage extends React.Component {
                         {/*    <a href="mailto:lu.xiaow@northeastern.edu">Xiaowei Lu</a>*/}
                         {/*</div>*/}
                         Copyright @ Clicked Team 2021
+                        </div>
                     </div>
                 </div>
 

@@ -6,3 +6,7 @@
     margin-right: 15px;
 }
 
+.footer-bootom {
+    bottom: 0;
+    position: absolute;
+}

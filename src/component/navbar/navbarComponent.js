@@ -15,7 +15,7 @@ class NavbarComponent extends React.Component {
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <a className="navbar-brand nav-margin" href="#">Clicked</a>
+                    <a className="navbar-brand nav-margin" href="/">Clicked</a>
 
                     {   this.props.currentUser.username === '' &&
                         <div className="collapse navbar-collapse nav-margin" id="navbarTogglerDemo03">

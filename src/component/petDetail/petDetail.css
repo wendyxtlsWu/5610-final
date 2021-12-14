@@ -15,9 +15,14 @@
 
 .review-title {
     font-size: 30px;
-    color: blue;
+    color: #61dafb;
+    font-family: "Gill Sans", sans-serif;
+    margin-top: 10px;
 }
 
+.review-subtitle {
+    font-size: 20px;
+}
 .card-bottom-margin {
     margin-bottom: 20px;
 }
@@ -42,5 +47,13 @@
 
 .review-link {
     color: #2394eb;
+    cursor: pointer;
+}
+
+.title-bold {
+    font-weight: bold;
+}
+
+.title-pointer {
     cursor: pointer;
 }
