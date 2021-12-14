@@ -47,40 +47,15 @@ class HomePage extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-1 d-none d-md-block"></div>
+
                 </div>
 
-
-                <div style={{
-                    backgroundImage: `url('https://www.healthy-pets.co.uk/media/8d84f461ccd21f7/hero-image1.png')`,
-                    height: '100px', width: '100%', backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
-                }}>
-                    <div className="mx-auto" style={{paddingTop: 40, fontFamily: 'Oxygen', fontWeight: '450'}}>
-                        <div>Contact us</div>
-                        <div>
-                            <a href="mailto:bai.xue1@northeastern.edu">Xue Bai</a> |
-                            <a href="mailto:liu.suyi@northeastern.edu">Suying Liu</a> |
-                            <a href="mailto:wu.jingj@northeastern.edu">Jingjing Wu</a> |
-                            <a href="mailto:lu.xiaow@northeastern.edu">Xiaowei Lu</a>
-
-
-                        {/*    <a href="mailto:bai.xue1@northeastern.edu">Xue Bai</a>*/}
-                        {/*</div>*/}
-
-                        {/*<div>*/}
-                        {/*    <a href="mailto:liu.suyi@northeastern.edu">Suying Liu</a>*/}
-                        {/*</div>*/}
-                        {/*<div>*/}
-                        {/*    /!*<span className="pl-2"></span>*!/*/}
-                        {/*    <a href="mailto:wu.jingj@northeastern.edu">Jingjing Wu</a>*/}
-                        {/*</div>*/}
-                        {/*<div>*/}
-                        {/*    <a href="mailto:lu.xiaow@northeastern.edu">Xiaowei Lu</a>*/}
-                        {/*</div>*/}
-                        Copyright @ Clicked Team 2021
-                        </div>
-                    </div>
-                </div>
+                {/*<div style={{*/}
+                {/*    backgroundImage: `url('https://www.healthy-pets.co.uk/media/8d84f461ccd21f7/hero-image1.png')`,*/}
+                {/*    height: '100px', width: '100%', backgroundRepeat: 'no-repeat', backgroundSize: 'cover',*/}
+                {/*}}>*/}
+                {/*   *!/*/}
+                {/*</div>*/}
 
             </div>
         )

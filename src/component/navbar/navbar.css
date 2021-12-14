@@ -6,11 +6,12 @@
     margin-right: 15px;
 }
 
-.footer-bottom {
-    background-color:#2e2d2d;
-    margin-left: -13px;
-    margin-right: -13px;
-}
+
+/*.footer-bottom {*/
+/*    background-color:#2e2d2d;*/
+/*    margin-left: -13px;*/
+/*    margin-right: -13px;*/
+/*}*/
 
 .center {
     text-align: center;
@@ -19,3 +20,9 @@
 .contact-us {
     color: #61dafb;
 }
+
+/*.footer-bottom {*/
+/*    bottom: 0;*/
+/*    position: absolute;*/
+/*}*/
+

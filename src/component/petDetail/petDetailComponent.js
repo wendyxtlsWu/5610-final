@@ -185,7 +185,7 @@ class PetDetailComponent extends React.Component {
                         </div>
                     </div>
                 </div>
-                <FooterComponent/>
+                {/*<FooterComponent/>*/}
             </div>
         );
     }

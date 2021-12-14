@@ -47,6 +47,7 @@ class RegisterComponent extends React.Component {
                     <div className="d-flex justify-content-center align-content-center pt-3">
                         <div className="container mt-3 bg-white rounded align-content-center mt-5 pt-5" style={{ width:'50%'}}>
                             <h3 className="text-black-50 text-center p-3">Create an Account</h3>
+                            <span>Username</span>
                             <input value={this.state.user.username} placeholder="Username" className="form-control border"
                                    onChange={(e) => {
                                        const newUserName = e.target.value
@@ -59,6 +60,7 @@ class RegisterComponent extends React.Component {
                                    }
                                    }/>
                             <br/>
+                            <span>Password</span>
                             <input value={this.state.user.password} placeholder="Password" type="password" className="form-control border"
                                    onChange={(e) => {
                                        const newPassword = e.target.value
@@ -90,6 +92,7 @@ class RegisterComponent extends React.Component {
                             {/*        Please verify password*/}
                             {/*    </p>*/}
                             {/*}*/}
+                            <span>Email Address</span>
                             <input value={this.state.user.email} placeholder="Email" type="email" className="form-control border"
                                    onChange={(e) => {
                                        const newEmail = e.target.value
@@ -102,6 +105,7 @@ class RegisterComponent extends React.Component {
                                    }
                                    }/>
                             <br/>
+                            <span>Zip Code (5 digits)</span>
                             <input value={this.state.user.zipCode} placeholder="Zip code" type="zipCode" className="form-control border"
                                    onChange={(e) => {
                                        this.setState(prevState => ({
@@ -113,20 +117,8 @@ class RegisterComponent extends React.Component {
                                    }
                                    }/>
                             <br/>
-                            {/*<input value={this.state.user.lastName} placeholder="Last Name" type="lastName" className="form-control"*/}
-                            {/*       onChange={(e) => {*/}
-                            {/*           const newLastName = e.target.value*/}
-                            {/*           this.setState(prevState => ({*/}
-                            {/*               user: {*/}
-                            {/*                   ...prevState.user,*/}
-                            {/*                   lastName: newLastName*/}
-                            {/*               }*/}
-                            {/*           }))*/}
-                            {/*       }*/}
-                            {/*       }/>*/}
-                            {/*<br/>*/}
-                            {/*<label for="user-type">What brought you to Clicked? </label>*/}
-                            <div>What brought you to Clicked?</div>
+
+                            <span>What brought you to Clicked?</span>
                             <select
                                 className="custom-select border"
                                 onChange={(e) => {
