@@ -85,7 +85,7 @@ class ReviewListComponent extends React.Component {
                                 <div className="row p-2">
                                     <div className="col-md-4">
                                         <Link to={`details/${review.petId}`}>
-                                            <img className="rounded" src={review.petUrl}
+                                            <img className="rounded" src={review.petImageURL}
                                                  style={{width: '100%', height: '100%'}} alt="default-pic"/>
                                         </Link>
                                     </div>

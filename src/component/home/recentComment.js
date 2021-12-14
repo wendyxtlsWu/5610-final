@@ -39,11 +39,10 @@ class RecentComment extends React.Component {
                                 <div className="card">
                                     <div className="row p-2">
                                         <div className="col-md-4">
-                                            review image url
-                                            {/*<Link to={`details/${review.petId}`}>*/}
-                                            {/*    <img className="rounded" src={review.businessUrl}*/}
-                                            {/*         style={{width: '100%', height: '8rem'}} alt="default-pic"/>*/}
-                                            {/*</Link>*/}
+                                            <Link to={`details/${review.petId}`}>
+                                                <img className="rounded" src={review.petImageURL}
+                                                     style={{width: '100%', height: '8rem'}} alt="default-pic"/>
+                                            </Link>
                                         </div>
                                         <div className="col-md-8 px-0">
                                             <div className="card-body p-0 pl-3">
