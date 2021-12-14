@@ -134,7 +134,8 @@ class PetDetailComponent extends React.Component {
                                                 userId: this.props.currentUser.id,
                                                 username: this.props.currentUser.username,
                                                 petTitle: this.state.details.name,
-                                                content: this.state.yourComment
+                                                content: this.state.yourComment,
+                                                petImageURL: this.state.details.photos[0].large
                                             })}>
                                             Submit
                                     </button>
@@ -159,7 +160,8 @@ class PetDetailComponent extends React.Component {
                                             onClick={() => this.createNewApplication({
                                                 userId: this.props.currentUser.id,
                                                 username: this.props.currentUser.username,
-                                                petTitle: this.state.details.name
+                                                petTitle: this.state.details.name,
+                                                petImageURL: this.state.details.photos[0].large
                                             })}>
 
                                     apply now</button>

@@ -43,9 +43,9 @@ class HomePage extends React.Component {
                             </div>
                             <div className="col-md-1 col-lg-1 d-none d-md-block"></div>
                             <div className="col-md-3 col-lg-3 d-none d-md-block">
-                                <UserList
-                                    history={this.props.history}
-                                    currentUser={this.props.currentUser}/>
+                                {/*<UserList*/}
+                                {/*    history={this.props.history}*/}
+                                {/*    currentUser={this.props.currentUser}/>*/}
                             </div>
                         </div>
                     </div>
