@@ -19,7 +19,7 @@ class ReviewListComponent extends React.Component {
             petId: '',
             petTitle: '',
             petUrl: '',
-            rating: '',
+            // rating: '',
             content: ''
         }
     }
@@ -108,33 +108,33 @@ class ReviewListComponent extends React.Component {
                                                   </span>
                                                 }
                                             </h5>
-                                            <p className="card-text text-left">
-                                                {
-                                                    this.state.editingId !== review.id &&
-                                                    <small className="text-muted">
-                                                        <span>rating: {review.rating}</span>
-                                                    </small>
-                                                }
-                                                {
-                                                    this.state.editingId === review.id &&
-                                                    <select className="custom-select" value={this.state.review.rating}
-                                                            onChange={(e) => {
-                                                                const newRating = e.target.value
-                                                                this.setState(prevState => ({
-                                                                    review: {
-                                                                        ...prevState.review,
-                                                                        rating: newRating
-                                                                    }
-                                                                }))
-                                                            }}>
-                                                        <option value="5">5</option>
-                                                        <option value="4">4</option>
-                                                        <option value="3">3</option>
-                                                        <option value="2">2</option>
-                                                        <option value="1">1</option>
-                                                    </select>
-                                                }
-                                            </p>
+                                            {/*<p className="card-text text-left">*/}
+                                            {/*    {*/}
+                                            {/*        this.state.editingId !== review.id &&*/}
+                                            {/*        <small className="text-muted">*/}
+                                            {/*            <span>rating: {review.rating}</span>*/}
+                                            {/*        </small>*/}
+                                            {/*    }*/}
+                                            {/*    {*/}
+                                            {/*        this.state.editingId === review.id &&*/}
+                                            {/*        <select className="custom-select" value={this.state.review.rating}*/}
+                                            {/*                onChange={(e) => {*/}
+                                            {/*                    const newRating = e.target.value*/}
+                                            {/*                    this.setState(prevState => ({*/}
+                                            {/*                        review: {*/}
+                                            {/*                            ...prevState.review,*/}
+                                            {/*                            rating: newRating*/}
+                                            {/*                        }*/}
+                                            {/*                    }))*/}
+                                            {/*                }}>*/}
+                                            {/*            <option value="5">5</option>*/}
+                                            {/*            <option value="4">4</option>*/}
+                                            {/*            <option value="3">3</option>*/}
+                                            {/*            <option value="2">2</option>*/}
+                                            {/*            <option value="1">1</option>*/}
+                                            {/*        </select>*/}
+                                            {/*    }*/}
+                                            {/*</p>*/}
                                             {
                                                 this.state.editingId !== review.id &&
                                                 <p className="card-text text-left mb-1"

@@ -1,9 +1,9 @@
 import React from 'react';
-import ReviewListComponent from "../reviews/ReviewListComponent";
+// import ReviewListComponent from "../reviews/ReviewListComponent";
 import {getUserProfile} from "../../service/userService";
 import {findReviewsForUser} from "../../service/reviewService";
-import ApplicationListVolunteer from "../applications/ApplicationListVolunteer";
-import ApplicationListAll from "../applications/ApplicationListAll";
+// import ApplicationListVolunteer from "../applications/ApplicationListVolunteer";
+// import ApplicationListAll from "../applications/ApplicationListAll";
 
 class UserProfileComponent extends React.Component {
     componentDidMount() {
@@ -61,30 +61,30 @@ class UserProfileComponent extends React.Component {
                                     </fieldset>
                                 </form>
                             </div>
-                            <div className="col-sm-12 col-md-8 col-lg-7">
-                                {
-                                    this.state.profile.userType === "ADOPTER" &&
-                                    <ReviewListComponent
-                                        history={this.props.history}
-                                        userId={this.props.userId}
-                                        ownPage={false}/>
-                                }
-                                {
-                                    this.state.profile.userType === "SHELTER/RESCUE" &&
-                                    <ApplicationListAll
-                                        history={this.props.history}
-                                        userId={this.state.profile.userId}
-                                        ownPage={false}
-                                    />
-                                }
-                                {
-                                    this.state.profile.userType === "VOLUNTEER" &&
-                                    <ApplicationListVolunteer
-                                        userType={this.state.profile.userType}
-                                        userId={this.state.profile.userId}
-                                        ownPage={false}/>
-                                }
-                            </div>
+                            {/*<div className="col-sm-12 col-md-8 col-lg-7">*/}
+                            {/*    {*/}
+                            {/*        this.state.profile.userType === "ADOPTER" &&*/}
+                            {/*        <ReviewListComponent*/}
+                            {/*            history={this.props.history}*/}
+                            {/*            userId={this.props.userId}*/}
+                            {/*            ownPage={false}/>*/}
+                            {/*    }*/}
+                            {/*    {*/}
+                            {/*        this.state.profile.userType === "SHELTER/RESCUE" &&*/}
+                            {/*        <ApplicationListAll*/}
+                            {/*            history={this.props.history}*/}
+                            {/*            userId={this.state.profile.userId}*/}
+                            {/*            ownPage={false}*/}
+                            {/*        />*/}
+                            {/*    }*/}
+                            {/*    {*/}
+                            {/*        this.state.profile.userType === "VOLUNTEER" &&*/}
+                            {/*        <ApplicationListVolunteer*/}
+                            {/*            userType={this.state.profile.userType}*/}
+                            {/*            userId={this.state.profile.userId}*/}
+                            {/*            ownPage={false}/>*/}
+                            {/*    }*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                     <div className="col-md-2 d-none d-md-block px-0"/>

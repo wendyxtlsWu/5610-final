@@ -168,7 +168,7 @@ class ProfilePageComponent extends React.Component {
                     </div>
                     <div className="mt-3 col-12 col-md-8 col-lg-7">
                         {
-                            this.state.currentUser.userType === "ADOPTER" &&
+                            this.state.currentUser.userType === "VOLUNTEER" &&
                             <ReviewListComponent
                                 history={this.props.history}
                                 userId={this.state.currentUser.userId}
@@ -183,7 +183,7 @@ class ProfilePageComponent extends React.Component {
                             />
                         }
                         {
-                            this.state.currentUser.userType === "VOLUNTEER" &&
+                            this.state.currentUser.userType === "ADOPTER" &&
                             <ApplicationListVolunteer
                                 history={this.props.history}
                                 userId={this.state.currentUser.userId}

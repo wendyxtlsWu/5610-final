@@ -160,7 +160,7 @@ class PetDetailComponent extends React.Component {
                                     <button type="submit"
                                             className="btn btn-primary"
                                             onClick={() => this.createNewReview({
-                                                userId: this.props.currentUser.id,
+                                                userId: this.props.currentUser.userId,
                                                 username: this.props.currentUser.username,
                                                 // petTitle: this.state.details.name,
                                                 petTitle: "dog",
@@ -187,7 +187,7 @@ class PetDetailComponent extends React.Component {
                                 <div className="col-margin-right">
                                     <button className="apply-button btn-primary"
                                             onClick={() => this.createNewApplication({
-                                                userId: this.props.currentUser.id,
+                                                userId: this.props.currentUser.userId,
                                                 username: this.props.currentUser.username,
                                                 petTitle: "dog"
                                             })}>
