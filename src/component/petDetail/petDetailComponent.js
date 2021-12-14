@@ -24,12 +24,6 @@ class PetDetailComponent extends React.Component {
 
 
     componentDidMount() {
-        // petService.findLocalDetailById(this.props.id)
-        //     .then(response => this.setState({
-        //         localDetails: response
-        //     }))
-
-
         petService.findDetailById(this.props.id)
             .then(response => this.setState({
                 details: response.data.animal
@@ -66,12 +60,12 @@ class PetDetailComponent extends React.Component {
             })
     }
 
-    // gotoProfile = (userId) => {
-    //     if(userId === this.props.currentUser.id)
-    //         this.props.history.push("/profile")
-    //     else
-    //         this.props.history.push('/profile/' + userId)
-    // }
+    gotoProfile = (userId) => {
+        if(userId === this.props.currentUser.id)
+            this.props.history.push("/profile")
+        else
+            this.props.history.push('/profile/' + userId)
+    }
 
     render() {
         return(
@@ -109,9 +103,9 @@ class PetDetailComponent extends React.Component {
                                         <div className="card">
                                             <div className="card-body">
                                                 <h5 className="card-title">
-                                                    {/*<span onClick={() => this.gotoProfile(review.userId)}>*/}
+                                                    <span onClick={() => this.gotoProfile(review.userId)}>
                                                         {review.username}
-                                                    {/*</span>*/}
+                                                    </span>
                                                 </h5>
                                                 <p className="card-text">{review.content}</p>
                                             </div>
@@ -119,6 +113,7 @@ class PetDetailComponent extends React.Component {
                                     </div>)
                                 }
                             </div>
+                            { this.props.currentUser.username !== '' &&
                             <div className="row">
                                 <form className="col-5">
                                     <div class="form-group">
@@ -132,6 +127,7 @@ class PetDetailComponent extends React.Component {
                                                   }}>
                                         </textarea>
                                     </div>
+
                                     <button type="submit"
                                             className="btn btn-primary"
                                             onClick={() => this.createNewReview({
@@ -144,11 +140,11 @@ class PetDetailComponent extends React.Component {
                                     </button>
                                 </form>
                             </div>
+                            }
                         </div>
 
                         <div className="col-3">
                             {
-                                // this.state.localDetails.foster &&
                                 this.state.applications.length === 0 &&
                                     <p className="ml-5">No Applications</p>
                             }
@@ -157,7 +153,7 @@ class PetDetailComponent extends React.Component {
                                 <a className="list-group-item col-margin-right">{application.username}</a>)
                             }
 
-                            {/*{ this.state.localDetails.foster && this.props.currentUser.role === "ADOPTER" && */}
+                            { this.props.currentUser.username !== '' &&
                                 <div className="col-margin-right">
                                     <button className="apply-button btn-primary"
                                             onClick={() => this.createNewApplication({
@@ -168,7 +164,7 @@ class PetDetailComponent extends React.Component {
 
                                     apply now</button>
                                 </div>
-                            {/*}*/}
+                            }
                         </div>
                     </div>
                 </div>
