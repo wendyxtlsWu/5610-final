@@ -18,9 +18,10 @@ class ReviewListComponent extends React.Component {
             username: '',
             petId: '',
             petTitle: '',
-            petUrl: '',
+            // petUrl: '',
             // rating: '',
-            content: ''
+            content: '',
+            petImageURL:'',
         }
     }
 

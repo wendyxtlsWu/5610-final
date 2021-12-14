@@ -135,7 +135,7 @@ class PetDetailComponent extends React.Component {
                                                 username: this.props.currentUser.username,
                                                 petTitle: this.state.details.name,
                                                 content: this.state.yourComment,
-                                                petImageURL: this.state.details.photos[0].large
+                                                // petImageURL: this.state.details.photos[0].large
                                             })}>
                                             Submit
                                     </button>

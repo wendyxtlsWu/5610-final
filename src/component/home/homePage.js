@@ -19,16 +19,16 @@ class HomePage extends React.Component {
                     backgroundImage: `url('https://www.flytap.com/-/media/Flytap/new-tap-pages/travelling-with-animals/pets/flying-with-pets-og-image-1200x630.jpg')`,
                     height: '600px', width: '100%', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
                 }}>
-                    <div className="d-flex align-items-center justify-content-center" style={{height: '450px'}}>
-                        <div className="col-lg-12">
-                            <h1 className="text-center"
-                                style={{color: 'green', fontFamily: 'Ubuntu', fontWeight: '700', marginTop: -100}}>My Comment</h1>
-                            <hr/>
-                            search
-                            {/*<a href="/search" className="btn btn-success pl-2" style={{color: 'grey'}}>*/}
-                            {/*    Find Pet<i className="fa fa-search ml-2"/></a>*/}
-                        </div>
-                    </div>
+                    {/*<div className="d-flex align-items-center justify-content-center" style={{height: '450px'}}>*/}
+                    {/*    <div className="col-lg-12">*/}
+                    {/*        <h1 className="text-center"*/}
+                    {/*            style={{color: 'green', fontFamily: 'Ubuntu', fontWeight: '700', marginTop: -100}}>My Comment</h1>*/}
+                    {/*        <hr/>*/}
+                    {/*        search*/}
+                    {/*        /!*<a href="/search" className="btn btn-success pl-2" style={{color: 'grey'}}>*!/*/}
+                    {/*        /!*    Find Pet<i className="fa fa-search ml-2"/></a>*!/*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
 
                 <div className="row">
