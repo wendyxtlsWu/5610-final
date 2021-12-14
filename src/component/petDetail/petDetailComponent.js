@@ -135,7 +135,7 @@ class PetDetailComponent extends React.Component {
                                                 username: this.props.currentUser.username,
                                                 petTitle: this.state.details.name,
                                                 content: this.state.yourComment,
-                                                petImageURL: this.state.details.photos[0].large
+                                                // petImageURL: this.state.details.photos[0].large
                                             })}>
                                             Submit
                                     </button>
@@ -154,7 +154,9 @@ class PetDetailComponent extends React.Component {
                                 <a className="list-group-item col-margin-right">{application.username}</a>)
                             }
 
+
                             { this.props.currentUser.username !== '' &&
+
                                 <div className="col-margin-right">
                                     <button className="apply-button btn-primary"
                                             onClick={() => this.createNewApplication({
