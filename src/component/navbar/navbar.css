@@ -7,10 +7,9 @@
 }
 
 .footer-bottom {
-    bottom: 0;
-    /*position: absolute;*/
     background-color:#2e2d2d;
-
+    margin-left: -13px;
+    margin-right: -13px;
 }
 
 .center {

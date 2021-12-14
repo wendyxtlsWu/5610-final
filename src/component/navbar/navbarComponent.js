@@ -30,9 +30,7 @@ class NavbarComponent extends React.Component {
                                 <li className="nav-item item-margin">
                                     <a className="nav-link" href="/register">Signup</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled">Contact</a>
-                                </li>
+
                             </ul>
                         </div>
                     }
@@ -44,9 +42,6 @@ class NavbarComponent extends React.Component {
                                         <li className="nav-item item-margin">
                                             <a className="nav-link active" aria-current="page" href="/search">
                                                 <i className="fas fa-search fa-lg"></i></a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <a className="nav-link disabled">Contact</a>
                                         </li>
                                         <div className="dropdown show">
                                             <button className="btn btn-secondary dropdown-toggle ml-1" type="button"
@@ -63,15 +58,8 @@ class NavbarComponent extends React.Component {
                                             </div>
                                         </div>
                                     </ul>
-
                                 </div>
-
-
                     }
-
-
-
-
                 </div>
             </nav>
         )
