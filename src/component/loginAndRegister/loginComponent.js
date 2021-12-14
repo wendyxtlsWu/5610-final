@@ -1,5 +1,6 @@
 import React from 'react';
 import {login} from "../../service/userService";
+import FooterComponent from "../navbar/footerComponent";
 
 
 class LoginComponent extends React.Component {
@@ -77,7 +78,9 @@ class LoginComponent extends React.Component {
                         </div>
 
                 </div>
+
             </div>
+
         )
     }
 }
