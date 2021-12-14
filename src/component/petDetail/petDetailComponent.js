@@ -154,7 +154,9 @@ class PetDetailComponent extends React.Component {
                                 <a className="list-group-item col-margin-right">{application.username}</a>)
                             }
 
+
                             { this.props.currentUser.username !== '' &&
+
                                 <div className="col-margin-right">
                                     <button className="apply-button btn-primary"
                                             onClick={() => this.createNewApplication({

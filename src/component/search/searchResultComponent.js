@@ -54,7 +54,7 @@ class SearchResultComponent extends React.Component {
                                          key={idx}>
                                         <div className="card m-4 p-3" style={{width:'18rem'}}>
                                             <Link to={`/details/${pet.id}`}>
-                                                <img className="card-img-top" src={pet.photos[0].small} alt='Picture not available'
+                                                <img className="card-img-top" src={pet.photos[0].medium} alt='Picture not available'
                                                      style={{height: '200px'}}/>
                                             </Link>
                                             <div className="card-body p-1">

@@ -28,7 +28,7 @@ class RegisterComponent extends React.Component {
                 }
                 else{
                     this.props.setCurrentUser(newUser)
-                    this.props.history.push('/profile')
+                    this.props.history.push('/')
                 }
             })
     }
