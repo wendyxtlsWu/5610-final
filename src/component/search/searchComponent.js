@@ -4,43 +4,46 @@ import {searchPets} from "../../service/petService";
 
 export default class SearchComponent extends React.Component {
     constructor(props) {
+        // console.log("SearchCom props ", props)
         super(props);
     }
 
     componentDidMount() {
+        // console.log("state ", this.state)
         searchPets(this.state.search)
             .then(response => {
-                this.renderPetsResult(response.animals)
+                // console.log("SC didmount", response)
+                this.renderPetsResult(response)
             })
         // this.searchBusiness()
     }
 
     state = {
         search : {
-            type: '',
-            name: '',
-            size:'',
-            age:'',
-            gender:''
+            type: this.props.type,
+            name: this.props.name,
+            size: this.props.size,
+            age: this.props.age,
+            gender:this.props.gender
         },
-        searchPetsResult: []
+        searchPetsResult: {}
     }
 
 
     handleSearch = () => {
         const search = this.state.search;
-        console.log("request", search)
+        // console.log("request", search)
         searchPets(search)
                 .then(response => {
                     // console.log("handleSearch", response)
-                    this.renderPetsResult(response.animals);
+                    this.renderPetsResult(response);
                 })
         }
 
 
 
-    renderPetsResult = (animals) => {
-        if (animals.length === 0) {
+    renderPetsResult = (response) => {
+        if (response.local.length === 0 && response.remote.length === 0) {
             alert('No result has been found.');
             this.setState({
                 search : {
@@ -50,16 +53,24 @@ export default class SearchComponent extends React.Component {
                     age:'',
                     gender:''
                 },
-                // searchPetsResult: []
+                searchPetsResult: {}
             });
             this.props.history.push('/search');
         } else {
-            this.props.history.push(`/search/type=${this.state.search.type}&name=${this.state.search.name}&size=${this.state.search.size}&age=${this.state.search.age}&gender=${this.state.search.gender}`);
+            // console.log("renderPetsResult", response)
+            console.log("state in ", this.state)
+            this.props.history.push(`/search?type=${this.state.search.type}&name=${this.state.search.name}&size=${this.state.search.size}&age=${this.state.search.age}&gender=${this.state.search.gender}`);
             this.setState((prevState) => ({
                 ...prevState,
-                searchPetsResult: animals
+                searchPetsResult: response
             }))
+
+
         }
+    }
+
+    getStringFromState(s) {
+        return s === undefined
     }
 
     render() {
@@ -94,7 +105,7 @@ export default class SearchComponent extends React.Component {
                                             }
                                         }))
                                     }}>
-                                    <option selected>Choose...</option>
+                                    <option defaultValue={""}>Choose...</option>
                                     <option value={"Dog"}>Dog</option>
                                     <option value={"Cat"}>Cat</option>
                                 </select>
@@ -111,7 +122,7 @@ export default class SearchComponent extends React.Component {
                                             }
                                         }))
                                     }}>
-                                    <option selected>Choose...</option>
+                                    <option defaultValue={""}>Choose...</option>
                                     <option value={"Female"}>Female</option>
                                     <option value={"Male"}>Male</option>
                                 </select>
@@ -128,7 +139,7 @@ export default class SearchComponent extends React.Component {
                                             }
                                         }))
                                     }}>
-                                    <option selected>Choose...</option>
+                                    <option defaultValue={""}>Choose...</option>
                                     <option value={"Small"}>Small</option>
                                     <option value={"Medium"}>Medium</option>
                                     <option value={"Large"}>Large</option>
@@ -146,7 +157,7 @@ export default class SearchComponent extends React.Component {
                                             }
                                         }))
                                     }}>
-                                    <option selected>Choose...</option>
+                                    <option defaultValue={""}>Choose...</option>
                                     <option value={"Baby"}>Baby</option>
                                     <option value={"Young"}>Young</option>
                                     <option value={"Adult"}>Adult</option>
@@ -160,6 +171,7 @@ export default class SearchComponent extends React.Component {
                         </div>
                     </div>
                     <div className="col-9">
+                        {/*{console.log("before calling searchResult", this.state.searchPetsResult)}*/}
                         <SearchResultComponent pets={this.state.searchPetsResult}/>
 
                     </div>
