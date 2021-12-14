@@ -80,9 +80,11 @@ class PetDetailComponent extends React.Component {
                     <div className="row" >
                         <div className="col-9">
                             <div className="card col-margin-left">
-
-                                {/*<img className="card-img-top" src={this.state.details.photos}/>*/}
-                                <img className="card-img-top" src="https://www.burgesspetcare.com/wp-content/uploads/2019/11/pets.jpg"/>
+                                {/*{console.log("details", this.state.details)}*/}
+                                {JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?
+                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="600px"
+                                         width="auto"/> :
+                                    <img className="card-img-top" src="https://www.burgesspetcare.com/wp-content/uploads/2019/11/pets.jpg"/>}
 
                                 <div className="card-body">
                                     <h5 className="card-title">{this.state.details.name}</h5>
