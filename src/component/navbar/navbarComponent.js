@@ -9,7 +9,7 @@ class NavbarComponent extends React.Component {
     render() {
         return (
             <nav id="mainNavbar" className="navbar bg-white navbar-expand-md py-1 px-2">
-                <a className="navbar-brand nav-margin home-title" href="/">Clicked</a>
+                <a className="home-title" href="/">Clicked</a>
                 <div>
                     <div className="row mr-1">
                         {
@@ -24,7 +24,7 @@ class NavbarComponent extends React.Component {
 
                         {
                             this.props.currentUser.username !== '' &&
-                            <div className="row" id="container">
+                            <div className="btn-group">
 
                                     <a className="btn btn-secondary mx-1" href="/search">Search <i className="fas fa-search fa-lg"></i></a>
 
