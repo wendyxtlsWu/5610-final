@@ -1,4 +1,4 @@
-import {petFinderClient, PETS_APPLICATIONS_API_URL, PETS_PROFILE_API_URL, SERVER_URL} from "../API/api";
+import {petFinderClient, SERVER_URL} from "../API/api";
 
 // export const findDetailById = async (id, accessToken) => {
 //     let response = await fetch(`${PUBLIC_API}/animals/${id}`, {
@@ -17,10 +17,10 @@ export const findDetailById = async (id) => {
     return pet;
 }
 
-export const findLocalDetailById = async (petId) => {
-    let response = await fetch(PETS_PROFILE_API_URL(petId))
-    return await response.json()
-};
+// export const findLocalDetailById = async (petId) => {
+//     let response = await fetch(PETS_PROFILE_API_URL(petId))
+//     return await response.json()
+// };
 
 export const searchPets = async (search) => {
     // console.log("service", search)
@@ -97,5 +97,5 @@ const searchRemotePets = async (search) => {
 
 
 export default {
-    findDetailById, findLocalDetailById, searchPets
+    findDetailById, searchPets
 }

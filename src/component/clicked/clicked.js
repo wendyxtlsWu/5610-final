@@ -6,15 +6,12 @@ import LoginComponent from "../loginAndRegister/loginComponent";
 import RegisterComponent from "../loginAndRegister/registerComponent";
 
 import {logout, getProfile} from "../../service/userService";
-import homePage from "../home/homePage";
 import HomePage from "../home/homePage";
 import ProfilePageComponent from "../users/ProfilePageComponent";
 import UserProfileComponent from "../users/UserProfileComponent";
-
 import SearchComponent from "../search/searchComponent";
-
 import * as qs from "query-string";
-import FooterComponent from "../navbar/footerComponent";
+
 
 
 class Clicked extends React.Component {

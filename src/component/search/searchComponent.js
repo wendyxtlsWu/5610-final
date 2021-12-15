@@ -3,10 +3,10 @@ import SearchResultComponent from "./searchResultComponent";
 import {searchPets} from "../../service/petService";
 
 export default class SearchComponent extends React.Component {
-    constructor(props) {
-        // console.log("SearchCom props ", props)
-        super(props);
-    }
+    // constructor(props) {
+    //     // console.log("SearchCom props ", props)
+    //     super(props);
+    // }
 
     componentDidMount() {
         // console.log("state ", this.state)
@@ -58,7 +58,7 @@ export default class SearchComponent extends React.Component {
             this.props.history.push('/search');
         } else {
             // console.log("renderPetsResult", response)
-            console.log("state in ", this.state)
+            // console.log("state in ", this.state)
             this.props.history.push(`/search?type=${this.state.search.type}&name=${this.state.search.name}&size=${this.state.search.size}&age=${this.state.search.age}&gender=${this.state.search.gender}`);
             this.setState((prevState) => ({
                 ...prevState,
