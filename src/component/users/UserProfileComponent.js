@@ -1,9 +1,7 @@
 import React from 'react';
-// import ReviewListComponent from "../reviews/ReviewListComponent";
+import "./profile.css"
 import {getUserProfile} from "../../service/userService";
 import {findReviewsForUser} from "../../service/reviewService";
-// import ApplicationListAdopter from "../applications/ApplicationListAdopter";
-// import ApplicationListAll from "../applications/ApplicationListAll";
 
 class UserProfileComponent extends React.Component {
     componentDidMount() {
@@ -33,62 +31,49 @@ class UserProfileComponent extends React.Component {
     render() {
         return (
             <div className="container mt-4" style={{padding: 1.5 + 'em'}}>
-                <h1 style={{fontFamily: 'Fantasy'}}>Profile</h1>
-                <div className="row mt-3">
-                    <div className="col-md-2 d-none d-md-block px-0"/>
-                    <div className="col-sm-12 col-md-8 px-0">
-                        <div className="row">
-                            <div className="col-sm-12 col-md-4 col-lg-5">
-                                <h1 className="text-left">{this.state.profile.username}</h1>
-                                <form>
-                                    <fieldset disabled>
-                                        <div className="form-group row mb-2">
-                                            <label className="col-md-4 col-form-label text-left">User Name: </label>
-                                            <div className="col-md-8">
-                                                <input type="text" className="form-control" value={this.state.profile.username}/>
-                                            </div>
+                <h1 className="profile">Profile</h1>
+                <div className="row">
+                    <div className="col-12 col-md-4 col-lg-5">
+                        <div className="row mb-3">
+                            <form>
+                                <fieldset disabled>
+                                    <div className="form-group row profile-user-info-form">
+                                        <label className="col-sm-4 col-form-label text-left">User Name: </label>
+                                        <div className="col-sm-8 profile-user-info-input">
+                                            <input type="text"
+                                                   className="form-control profile-user-info-input"
+                                                   style={{fontSize: '25px'}}
+                                                   value={this.state.profile.username}/>
                                         </div>
-                                        <div className="form-group row mb-2">
-                                            <label className="col-md-4 col-form-label text-left">User Type: </label>
-                                            <div className="col-md-8">
-                                                <input type="text" className="form-control" value={
-                                                    (this.state.profile.userType === "ADOPTER" && "Adopter") ||
-                                                    (this.state.profile.userType === "VOLUNTEER" && "Volunteer") ||
-                                                    (this.state.profile.userType === "SHELTER/RESCUE" && "Shelter/Rescue")
-                                                }/>
-                                            </div>
+                                    </div>
+                                    <div className="form-group row profile-user-info-form">
+                                        <label className="col-sm-4 col-form-label text-left">Email: </label>
+                                        <div className="col-sm-8 profile-user-info-input">
+                                            <input type="text"
+                                                   className="form-control profile-user-info-input"
+                                                   style={{fontSize: '25px'}}
+                                                   value={this.state.profile.email}/>
                                         </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                            {/*<div className="col-sm-12 col-md-8 col-lg-7">*/}
-                            {/*    {*/}
-                            {/*        this.state.profile.userType === "ADOPTER" &&*/}
-                            {/*        <ReviewListComponent*/}
-                            {/*            history={this.props.history}*/}
-                            {/*            userId={this.props.userId}*/}
-                            {/*            ownPage={false}/>*/}
-                            {/*    }*/}
-                            {/*    {*/}
-                            {/*        this.state.profile.userType === "SHELTER/RESCUE" &&*/}
-                            {/*        <ApplicationListAll*/}
-                            {/*            history={this.props.history}*/}
-                            {/*            userId={this.state.profile.userId}*/}
-                            {/*            ownPage={false}*/}
-                            {/*        />*/}
-                            {/*    }*/}
-                            {/*    {*/}
-                            {/*        this.state.profile.userType === "VOLUNTEER" &&*/}
-                            {/*        <ApplicationListAdopter*/}
-                            {/*            userType={this.state.profile.userType}*/}
-                            {/*            userId={this.state.profile.userId}*/}
-                            {/*            ownPage={false}/>*/}
-                            {/*    }*/}
-                            {/*</div>*/}
+                                    </div>
+                                    <div className="form-group row mb-2 profile-user-info-form">
+                                        <label className="col-sm-4 col-form-label text-left">User Type: </label>
+                                        <div className="col-sm-8">
+                                            <input type="text"
+                                                   className="form-control profile-user-info-input"
+                                                   style={{fontSize: '25px'}}
+                                                   value={
+                                                       (this.state.profile.userType === "ADOPTER" && "Adopter") ||
+                                                       (this.state.profile.userType === "VOLUNTEER" && "Volunteer") ||
+                                                       (this.state.profile.userType === "SHELTER/RESCUE" && "Shelter/Rescue")
+                                                   }/>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
                     </div>
-                    <div className="col-md-2 d-none d-md-block px-0"/>
                 </div>
+                <div className="mt-3 col-12 col-md-8 col-lg-7"/>
             </div>
         )
     }

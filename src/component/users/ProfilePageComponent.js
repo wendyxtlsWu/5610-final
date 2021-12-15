@@ -1,4 +1,5 @@
 import React from 'react';
+import "./profile.css";
 import ReviewListComponent from "../reviews/ReviewListComponent";
 import {getProfile, updateProfile} from "../../service/userService";
 import ApplicationListAdopter from "../applications/ApplicationListAdopter";
@@ -51,15 +52,14 @@ class ProfilePageComponent extends React.Component {
     render() {
         return (
             <div className="container mt-4" style={{padding: 3}}>
-                <h1 style={{fontFamily: 'Fantasy'}}>My Profile</h1>
+                <h1 className="profile">My Profile</h1>
                 <div className="row">
                     <div className="col-12 col-md-4 col-lg-5">
                         <div className="row">
-                            <h3 className="text-left ml-1 mt-3"
-                                style={{
-                                    fontFamily: 'Monospace',
-                                    fontWeight: '500'
-                                }}>{this.state.currentUser.username}</h3>
+                            <h3 className="text-left ml-1 mt-3 profile-username"
+                            >
+                                {this.state.currentUser.username}
+                            </h3>
                             {
                                 !this.state.editing &&
                                 <span className="btn btn-outline-info ml-2 mb-3" style={{fontSize: '1rem'}}
@@ -72,13 +72,14 @@ class ProfilePageComponent extends React.Component {
                             }
                         </div>
                         <form>
-                            <div className="form-group row mb-3">
-                                <label className="col-md-4 col-form-label text-left"
-                                       style={{fontFamily: 'Serif', fontSize: '1.5rem'}}>User Name: </label>
+                            <div className="form-group row mb-3"
+                                 style={{fontSize:'25px'}}>
+                                <label className="col-md-4 col-form-label text-left profile-user-info-form">User Name: </label>
                                 <div className="col-md-8">
                                     {
                                         this.state.editing &&
-                                        <input type="text" className="form-control"
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
                                                value={this.state.currentUser.username}
                                                onChange={(e) => {
                                                    const newUsername = e.target.value
@@ -94,18 +95,21 @@ class ProfilePageComponent extends React.Component {
                                     }
                                     {
                                         !this.state.editing &&
-                                        <input type="text" className="form-control"
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
                                                value={this.state.currentUser.username} disabled/>
                                     }
                                 </div>
                             </div>
-                            <div className="form-group row mb-3">
-                                <label className="col-md-4 col-form-label text-left"
-                                       style={{fontFamily: 'Serif', fontSize: '1.5rem'}}>Email: </label>
+                            <div className="form-group row mb-3"
+                                 style={{fontSize:'25px'}}>
+                                <label className="col-md-4 col-form-label text-left profile-user-info-form">Email: </label>
                                 <div className="col-md-8">
                                     {
                                         this.state.editing &&
-                                        <input type="text" className="form-control" value={this.state.currentUser.email}
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
+                                               value={this.state.currentUser.email}
                                                onChange={(e) => {
                                                    const newEmail = e.target.value
                                                    this.setState(prevState => ({
@@ -119,18 +123,21 @@ class ProfilePageComponent extends React.Component {
                                     }
                                     {
                                         !this.state.editing &&
-                                        <input type="text" className="form-control" value={this.state.currentUser.email}
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
+                                               value={this.state.currentUser.email}
                                                disabled/>
                                     }
                                 </div>
                             </div>
-                            <div className="form-group row mb-3">
-                                <label className="col-md-4 col-form-label text-left"
-                                       style={{fontFamily: 'Serif', fontSize: '1.5rem'}}>Zip Code: </label>
+                            <div className="form-group row mb-3"
+                                 style={{fontSize:'25px'}}>
+                                <label className="col-md-4 col-form-label text-left profile-user-info-form">Zip Code: </label>
                                 <div className="col-md-8">
                                     {
                                         this.state.editing &&
-                                        <input type="text" className="form-control"
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
                                                value={this.state.currentUser.zipCode}
                                                onChange={(e) => {
                                                    const newZipCode = e.target.value
@@ -145,22 +152,25 @@ class ProfilePageComponent extends React.Component {
                                     }
                                     {
                                         !this.state.editing &&
-                                        <input type="text" className="form-control"
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
                                                value={this.state.currentUser.zipCode}
                                                disabled/>
                                     }
                                 </div>
                             </div>
                             <div>
-                                <div className="form-group row mb-3">
-                                    <label className="col-md-4 col-form-label text-left"
-                                           style={{fontFamily: 'Serif', fontSize: '1.5rem'}}>User Type: </label>
+                                <div className="form-group row mb-3" style={{fontSize:'25px'}}>
+                                    <label className="col-md-4 col-form-label text-left profile-user-info-form">User Type: </label>
                                     <div className="col-md-8">
-                                        <input type="text" className="form-control" value={
-                                            (this.state.currentUser.userType === "ADOPTER" && "Adopter") ||
-                                            (this.state.currentUser.userType === "VOLUNTEER" && "Volunteer") ||
-                                            (this.state.currentUser.userType === "SHELTER/RESCUE" && "Shelter/Rescue")
-                                        } disabled/>
+                                        <input type="text" className="form-control profile-user-info-input"
+                                               style={{fontSize:'25px'}}
+                                               value={
+                                                    (this.state.currentUser.userType === "ADOPTER" && "Adopter") ||
+                                                    (this.state.currentUser.userType === "VOLUNTEER" && "Volunteer") ||
+                                                    (this.state.currentUser.userType === "SHELTER/RESCUE" && "Shelter/Rescue")
+                                               } disabled
+                                        />
                                     </div>
                                 </div>
                             </div>
