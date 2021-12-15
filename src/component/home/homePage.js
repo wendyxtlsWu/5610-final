@@ -16,7 +16,7 @@ class HomePage extends React.Component {
             <div>
                 <div style={{
                     backgroundImage: `url('https://www.flytap.com/-/media/Flytap/new-tap-pages/travelling-with-animals/pets/flying-with-pets-og-image-1200x630.jpg')`,
-                    height: '600px', width: '100%', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
+                    height: '800px', width: '100%', backgroundRepeat: 'no-repeat', backgroundSize: 'cover'
                 }}>
 
                 </div>
@@ -25,7 +25,7 @@ class HomePage extends React.Component {
                     <div className="col-sm-12 col-md-11">
                         <div className="row" style={{paddingTop: 15}}>
                             <div className="col-md-2 col-lg-2 d-none d-md-block"></div>
-                            <div className="col-md-8 col-lg-8">
+                            <div className="col-md-8 col-lg-8" style={{color: '#61dafb', fontFamily: 'Gill Sans'}}>
                                 {<RecentComment
                                         history={this.props.history}
                                         currentUser={this.props.currentUser}/>}
