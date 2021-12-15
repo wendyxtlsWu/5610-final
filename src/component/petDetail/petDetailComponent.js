@@ -3,26 +3,16 @@ import petDetail from './petDetail.css';
 import reviewService from "../../service/reviewService";
 import applicationService from "../../service/applicationService";
 import petService from "../../service/petService";
-// import FooterComponent from "../navbar/footerComponent";
 
 class PetDetailComponent extends React.Component {
     state = {
         details: {},
         reviews: [],
         yourComment: "No comments",
-        applications:[],
+        applications: [],
         localDetails: {},
         accessToken: null,
     }
-
-    // constructor(props) {
-    //     super(props);
-    //     petService.findDetailById(this.props.id)
-    //         .then(response => this.setState({
-    //             details: response
-    //         }))
-    // }
-
 
     componentDidMount() {
         petService.findDetailById(this.props.id)
@@ -62,7 +52,7 @@ class PetDetailComponent extends React.Component {
     }
 
     gotoProfile = (userId) => {
-        if(userId === this.props.currentUser.id)
+        if (userId === this.props.currentUser.id)
             this.props.history.push("/profile")
         else
             this.props.history.push('/profile/' + userId)
@@ -75,7 +65,7 @@ class PetDetailComponent extends React.Component {
                     <div className="row" >
                         <div className="col-9">
                             <div className="card col-margin-left">
-                                {console.log("details", this.state.details)}
+                                {/*{console.log("details", this.state.details)}*/}
                                 {/*{JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?*/}
                                 { this.state.details && this.state.details.photos &&
                                     <img className="card-img-top" src={this.state.details.photos[0].large} height="620px"
@@ -86,6 +76,7 @@ class PetDetailComponent extends React.Component {
                                     <h5 className="card-title title-bold">{this.state.details.name}</h5>
                                     <p className="card-text">{this.state.details.description}</p>
                                 </div>
+
                                 <ul className="list-group list-group-flush">
                                     <li className="list-group-item">Type: {this.state.details.type}</li>
                                     <li className="list-group-item">Age: {this.state.details.age}</li>
@@ -98,7 +89,21 @@ class PetDetailComponent extends React.Component {
                                 {
                                     this.state.reviews.length === 0 &&
                                     <h6 className="comments-title review-subtitle">No comments yet!
-                                        Be the first to comment! ( <a href={"/login"}>Login</a>  required)
+                                        Be the first to comment!
+                                    </h6>
+
+                                }
+
+                            <h4 className="review-title mt-3">Comments</h4>
+                            {   this.props.currentUser.username === '' &&
+                                <h5>( <a href={"/login"}>Login</a>  required)</h5>
+                            }
+                            <div className="row">
+                                {
+                                    this.state.reviews.length === 0 &&
+                                    <h6 className="review-title review-subtitle">No comments yet!
+                                        Be the first to comment!
+
                                     </h6>
                                 }
                                 {
@@ -159,10 +164,15 @@ class PetDetailComponent extends React.Component {
                         </div>
 
                         <div className="col-3">
+
                             <h4 className="text-center app-title">Applications for {this.state.details.name}</h4>
+
+                            <h4 className="text-center">Applications for {this.state.details.name}</h4>
+                            {this.props.currentUser.username === '' &&<h5>( <a href={"/login"}>Login</a>  required)</h5>}
+
                             {
                                 this.state.applications.length === 0 &&
-                                    <h6 className="text-center tips">No applications yet! Be the first to apply! ( <a href={"/login"}>Login</a>  required)</h6>
+                                    <h6 className="text-center tips">No applications yet! Be the first to apply!</h6>
                             }
 
                             { this.state.applications.length !== 0 && this.state.applications.map((application, i) =>
@@ -188,11 +198,12 @@ class PetDetailComponent extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/*<FooterComponent/>*/}
+
+                </div>
             </div>
+
         );
     }
-
 }
 
 export default PetDetailComponent;
