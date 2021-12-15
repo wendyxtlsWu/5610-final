@@ -44,8 +44,8 @@ class RegisterComponent extends React.Component {
                     width:'100vw',
                     backgroundSize: "cover"
                 }}>
-                    <div className="d-flex justify-content-center align-content-center pt-3">
-                        <div className="container mt-3 bg-white rounded align-content-center mt-5 pt-5" style={{ width:'50%'}}>
+                    <div className="d-flex justify-content-center align-content-center">
+                        <div className="container mt-0 bg-white rounded align-content-center" style={{ width:'50%', height:'50%'}}>
                             <h3 className="text-black-50 text-center p-3">Create an Account</h3>
                             <span>Username</span>
                             <input value={this.state.user.username} placeholder="Username" className="form-control border"
@@ -136,7 +136,7 @@ class RegisterComponent extends React.Component {
                             </select>
                             <div className="text-black mt-3">Already have an account?<a href={"/login"}> Log in</a> </div>
                             <div className="text-black mt-3">By clicking register you are agreeing
-                                to the terms of use and acknowledging the <a href={"/privacyPolicy"}> Privacy Policy</a> </div>
+                                to the terms of use and acknowledging the <a href={"/privacy"}> Privacy Policy</a> </div>
 
                             <div className="row mt-3 d-flex justify-content-center" >
                                 <button className="btn btn-primary"

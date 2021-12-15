@@ -93,19 +93,10 @@ class PetDetailComponent extends React.Component {
                                     </h6>
 
                                 }
-
-                            <h4 className="review-title mt-3">Comments</h4>
                             {   this.props.currentUser.username === '' &&
                                 <h5>( <a href={"/login"}>Login</a>  required)</h5>
                             }
                             <div className="row">
-                                {
-                                    this.state.reviews.length === 0 &&
-                                    <h6 className="review-title review-subtitle">No comments yet!
-                                        Be the first to comment!
-
-                                    </h6>
-                                }
                                 {
                                     this.state.reviews && this.state.reviews.map((review, i) =>
                                     <div className="col-sm-4 card-bottom-margin" key={i}>
@@ -162,17 +153,14 @@ class PetDetailComponent extends React.Component {
                             </div>
                             }
                         </div>
-
-                        <div className="col-3">
-
+                    </div>
+                    <div className="col-3">
                             <h4 className="text-center app-title">Applications for {this.state.details.name}</h4>
-
-                            <h4 className="text-center">Applications for {this.state.details.name}</h4>
                             {this.props.currentUser.username === '' &&<h5>( <a href={"/login"}>Login</a>  required)</h5>}
 
                             {
                                 this.state.applications.length === 0 &&
-                                    <h6 className="text-center tips">No applications yet! Be the first to apply!</h6>
+                                <h6 className="text-center tips">No applications yet! Be the first to apply!</h6>
                             }
 
                             { this.state.applications.length !== 0 && this.state.applications.map((application, i) =>
@@ -182,23 +170,21 @@ class PetDetailComponent extends React.Component {
 
                             { this.props.currentUser.username !== '' &&
 
-                                <div className="col-margin-right">
-                                    <button className="apply-button btn btn-block btn-primary"
-                                            onClick={() => this.createNewApplication({
-                                                userId: this.props.currentUser.userId,
-                                                username: this.props.currentUser.username,
-                                                petTitle: this.state.details.name,
-                                                petImageURL: this.state.details.photos[0].large
-                                            })}>
+                            <div className="col-margin-right">
+                                <button className="apply-button btn btn-block btn-primary"
+                                        onClick={() => this.createNewApplication({
+                                            userId: this.props.currentUser.userId,
+                                            username: this.props.currentUser.username,
+                                            petTitle: this.state.details.name,
+                                            petImageURL: this.state.details.photos[0].large
+                                        })}>
 
                                     Apply now</button>
-                                </div>
+                            </div>
                             }
 
                         </div>
-                    </div>
                 </div>
-
                 </div>
             </div>
 
