@@ -75,7 +75,7 @@ class PetDetailComponent extends React.Component {
                     <div className="row" >
                         <div className="col-9">
                             <div className="card col-margin-left">
-                                {console.log("details", this.state.details)}
+                                {/*{console.log("details", this.state.details)}*/}
                                 {/*{JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?*/}
                                 { this.state.details && this.state.details.photos &&
                                     <img className="card-img-top" src={this.state.details.photos[0].large} height="auto"
@@ -94,11 +94,12 @@ class PetDetailComponent extends React.Component {
                                 </ul>
                             </div>
                             <h4 className="review-title mt-3">Comments</h4>
+                            {this.props.currentUser.username === '' &&<h5>( <a href={"/login"}>Login</a>  required)</h5>}
                             <div className="row">
                                 {
                                     this.state.reviews.length === 0 &&
                                     <h6 className="review-title review-subtitle">No comments yet!
-                                        Be the first to comment! ( <a href={"/login"}>Login</a>  required)
+                                        Be the first to comment!
                                     </h6>
                                 }
                                 {
@@ -160,9 +161,10 @@ class PetDetailComponent extends React.Component {
 
                         <div className="col-3">
                             <h4 className="text-center">Applications for {this.state.details.name}</h4>
+                            {this.props.currentUser.username === '' &&<h5>( <a href={"/login"}>Login</a>  required)</h5>}
                             {
                                 this.state.applications.length === 0 &&
-                                    <h6 className="text-center tips">No applications yet! Be the first to apply! ( <a href={"/login"}>Login</a>  required)</h6>
+                                    <h6 className="text-center tips">No applications yet! Be the first to apply!</h6>
                             }
 
                             { this.state.applications.length !== 0 && this.state.applications.map((application, i) =>
