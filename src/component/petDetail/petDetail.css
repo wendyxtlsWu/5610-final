@@ -11,9 +11,17 @@
 
 .pet-info {
     font-size: 30px;
+
 }
 
-.review-title {
+.title {
+    font-size: 25px;
+    color: #61dafb;
+    font-family: "Gill Sans", sans-serif;
+    margin-top: 10px;
+}
+
+.comments-title {
     font-size: 20px;
     color: #61dafb;
     font-family: "Gill Sans", sans-serif;
@@ -22,6 +30,7 @@
 
 .review-subtitle {
     font-size: 15px;
+    color: #61dafb;
 }
 .card-bottom-margin {
     margin-bottom: 20px;
@@ -59,9 +68,13 @@
 }
 
 .tips {
-    font-size: 10px;
+    font-size: 15px;
     color: #61dafb;
     font-family: "Gill Sans", sans-serif;
 }
 
-
+.app-title {
+    font-size: 25px;
+    color: #61dafb;
+    font-family: "Gill Sans", sans-serif;
+}

@@ -11,6 +11,7 @@ import ProfilePageComponent from "../users/ProfilePageComponent";
 import UserProfileComponent from "../users/UserProfileComponent";
 import SearchComponent from "../search/searchComponent";
 import * as qs from "query-string";
+import PrivacyComponent from "../navbar/privacyComponent";
 
 
 
@@ -115,6 +116,12 @@ class Clicked extends React.Component {
                             {...props}
                             userId={props.match.params.uid}
                             currentUserId={this.state.currentUser.userId}/>}/>
+
+                    <Route path="/privacy" exact={true} render={(props) =>
+                        <PrivacyComponent
+                            {...props}
+                        />}/>
+
                 </div>
             </BrowserRouter>
 

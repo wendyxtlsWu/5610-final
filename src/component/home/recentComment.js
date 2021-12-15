@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {getRecentReviews} from '../../service/reviewService'
+import {getRecentReviews} from '../../service/reviewService';
+import home from "./home.css";
 
 class RecentComment extends React.Component {
     componentDidMount() {
@@ -30,7 +31,7 @@ class RecentComment extends React.Component {
     render() {
         return (
             <div className="container mt-2 mb-5">
-                <h4 style={{color: 'blue', fontFamily: 'Cantrell', fontWeight: '480'}}>Recent Comments</h4>
+                <h4 className="home-title">Recent Comments</h4>
                 <hr/>
                 <div className="row">
                     {
@@ -47,18 +48,14 @@ class RecentComment extends React.Component {
                                         <div className="col-md-8 px-0">
                                             <div className="card-body p-0 pl-3">
                                                 <Link to={`details/${review.petId}`}>
-                                                    <h5 className="card-title text-truncate text-left mb-0 mr-0"
-                                                        style={{color: 'white', fontFamily: 'Oswald', fontWeight: '180'}}>
+                                                    <h5 className="card-title text-truncate text-left mb-0 mr-0 home-title2"
+                                                       >
                                                         <span style={{cursor: 'pointer'}}>
                                                             {review.petTitle}
                                                         </span>
                                                     </h5>
                                                 </Link>
-                                                <p className="card-text text-left mb-0">
-                                                    <small className="text-muted">
-                                                        <span>rating: {review.rating}</span>
-                                                    </small>
-                                                </p>
+
                                                 <p className="card-text text-left mb-1"
                                                    style={{color: 'white',height: '4rem', overflow: 'hidden'}}>{review.content}</p>
                                                 <p className="card-text">
