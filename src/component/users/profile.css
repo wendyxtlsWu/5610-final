@@ -31,3 +31,10 @@
     margin-top: 10px;
     cursor: pointer;
 }
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #61dafb;
+    text-decoration: none;
+}
