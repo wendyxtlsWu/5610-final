@@ -78,7 +78,7 @@ class PetDetailComponent extends React.Component {
                                 {console.log("details", this.state.details)}
                                 {/*{JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?*/}
                                 { this.state.details && this.state.details.photos &&
-                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="550px"
+                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="auto"
                                          width="auto" alt="Oops!  lost!"/>
                                 }
 
@@ -162,7 +162,7 @@ class PetDetailComponent extends React.Component {
                             <h4 className="text-center">Applications for {this.state.details.name}</h4>
                             {
                                 this.state.applications.length === 0 &&
-                                    <h6 className="text-center">No applications yet! Be the first to apply! ( <a href={"/login"}>Login</a>  required)</h6>
+                                    <h6 className="text-center tips">No applications yet! Be the first to apply! ( <a href={"/login"}>Login</a>  required)</h6>
                             }
 
                             { this.state.applications.length !== 0 && this.state.applications.map((application, i) =>

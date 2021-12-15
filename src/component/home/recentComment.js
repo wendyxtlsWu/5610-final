@@ -37,7 +37,7 @@ class RecentComment extends React.Component {
                         this.state.reviews && this.state.reviews.map((review, i) =>
                             <div className="col-md-12 col-lg-6 mt-1 mb-2" key={i}>
                                 <div className="card">
-                                    <div className="row p-2">
+                                    <div className="row p-2" style={{color: '#61dafb', fontFamily: 'Gill Sans'}}>
                                         <div className="col-md-4">
                                             <Link to={`details/${review.petId}`}>
                                                 <img className="rounded" src={review.petImageURL}
@@ -48,7 +48,7 @@ class RecentComment extends React.Component {
                                             <div className="card-body p-0 pl-3">
                                                 <Link to={`details/${review.petId}`}>
                                                     <h5 className="card-title text-truncate text-left mb-0 mr-0"
-                                                        style={{color: 'blue', fontFamily: 'Oswald', fontWeight: '180'}}>
+                                                        style={{color: 'white', fontFamily: 'Oswald', fontWeight: '180'}}>
                                                         <span style={{cursor: 'pointer'}}>
                                                             {review.petTitle}
                                                         </span>
@@ -60,10 +60,10 @@ class RecentComment extends React.Component {
                                                     </small>
                                                 </p>
                                                 <p className="card-text text-left mb-1"
-                                                   style={{height: '4rem', overflow: 'hidden'}}>{review.content}</p>
+                                                   style={{color: 'white',height: '4rem', overflow: 'hidden'}}>{review.content}</p>
                                                 <p className="card-text">
                                                     <small className="text-muted">
-                                                         <span style={{cursor: 'pointer'}}
+                                                         <span style={{color: 'white',cursor: 'pointer'}}
                                                                onClick={() => this.showProfile(review.userId)}>By {review.username}</span>
                                                     </small>
                                                 </p>

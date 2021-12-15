@@ -14,14 +14,14 @@
 }
 
 .review-title {
-    font-size: 30px;
+    font-size: 20px;
     color: #61dafb;
     font-family: "Gill Sans", sans-serif;
     margin-top: 10px;
 }
 
 .review-subtitle {
-    font-size: 20px;
+    font-size: 15px;
 }
 .card-bottom-margin {
     margin-bottom: 20px;
@@ -57,3 +57,11 @@
 .title-pointer {
     cursor: pointer;
 }
+
+.tips {
+    font-size: 10px;
+    color: #61dafb;
+    font-family: "Gill Sans", sans-serif;
+}
+
+
