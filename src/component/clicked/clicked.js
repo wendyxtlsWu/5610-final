@@ -62,7 +62,7 @@ class Clicked extends React.Component {
                             currentUser={this.state.currentUser}
                             handleLogout={this.handleLogout}/>}/>
 
-                    <Route path="/" exact={true} render={(props) =>
+                    <Route path={["/", "/home"]} exact={true} render={(props) =>
                         <HomePage {...props} currentUser={this.state.currentUser}/>
                         // <homePage
                         //     {...props}
