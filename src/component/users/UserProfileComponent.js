@@ -2,6 +2,7 @@ import React from 'react';
 import "./profile.css"
 import {getUserProfile} from "../../service/userService";
 import {findReviewsForUser} from "../../service/reviewService";
+import {Link} from "react-router-dom";
 
 class UserProfileComponent extends React.Component {
     componentDidMount() {
@@ -30,8 +31,13 @@ class UserProfileComponent extends React.Component {
 
     render() {
         return (
-            <div className="container mt-4" style={{padding: 1.5 + 'em'}}>
-                <h1 className="profile">Profile</h1>
+            <div className="container mt-4" style={{padding: 3}}>
+                <div>
+                    <Link to={'/profile'} className="back-button">
+                        BACK TO MY PROFILE
+                    </Link>
+                    <h1 className="profile">{this.state.profile.username}'s profile</h1>
+                </div>
                 <div className="row">
                     <div className="col-12 col-md-4 col-lg-5">
                         <div className="row mb-3">
