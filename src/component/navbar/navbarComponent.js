@@ -8,7 +8,7 @@ class NavbarComponent extends React.Component {
 
     render() {
         return (
-            <nav id="mainNavbar" className="navbar bg-light navbar-expand-md py-1 px-2">
+            <nav id="mainNavbar" className="navbar bg-white navbar-expand-md py-1 px-2">
                 <a className="navbar-brand nav-margin home-title" href="/">Clicked</a>
                 <div>
                     <div className="row mr-1">
