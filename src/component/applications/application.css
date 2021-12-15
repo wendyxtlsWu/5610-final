@@ -1,0 +1,17 @@
+.application-info {
+    font-family: "Gill Sans", sans-serif;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.application-button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.application-title{
+    font-size: 50px;
+    color: #61dafb;
+    font-family: "Gill Sans", sans-serif;
+    margin-top: 10px;
+}

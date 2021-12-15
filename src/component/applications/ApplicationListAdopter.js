@@ -1,4 +1,5 @@
 import React from "react";
+import "./application.css"
 import {
     findApplications,
     findApplicationsForUser,
@@ -10,13 +11,6 @@ import {Link} from "react-router-dom";
 class ApplicationListAdopter extends React.Component {
 
     componentDidMount() {
-        // if (this.props.userType == "SHELTER/RESCUE") {
-        //     this.findAllApplications();
-        // } else if (this.props.userType == "VOLUNTEER") {
-        //     this.findApplicationForUser();
-        // } else {
-        //     alert('Unrecognized user type!');
-        // }
         this.findApplicationForUser();
     }
 
@@ -78,8 +72,7 @@ class ApplicationListAdopter extends React.Component {
     render() {
         return (
             <div className="container mb-5">
-                <h3 className="text-left ml-1"
-                    style={{fontFamily: 'Monospace', fontWeight: '500'}}>
+                <h3 className="text-left ml-1 profile-username">
                     Applications
                 </h3>
                 <ul className="list-group">
@@ -94,13 +87,12 @@ class ApplicationListAdopter extends React.Component {
                         this.state.applications && this.state.applications.map((application, idx) =>
                             <li className={'list-group-item'} key={idx}>
                                 <div>
-                                    <Link style={{textDecoration: 'none'}} to={`/profile/${application.userId}`}>
+                                    <Link to={`/profile/${application.userId}`} className="application-info">
                                         Applicant: {application.username}
                                     </Link>
                                     {
                                         this.props.ownPage &&
-                                        <span className="float-right"
-                                              style={{cursor: 'pointer'}}>
+                                        <span className="float-right application-button">
                                                     <i
                                                         className="fa fa-edit"
                                                         onClick={() => this.editApplication(application)}
@@ -114,7 +106,7 @@ class ApplicationListAdopter extends React.Component {
                                 {
                                     this.state.editingId !== application.id &&
                                     <div>
-                                        <Link style={{textDecoration: 'none'}} to={`/details/${application.petId}`}>
+                                        <Link to={`/details/${application.petId}`} className="application-info">
                                             {`Pet name: ${application.petTitle}`}
                                         </Link>
                                     </div>
