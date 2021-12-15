@@ -62,7 +62,7 @@ class NavbarComponent extends React.Component {
             //         }
             //     </div>
             // </nav>
-            <nav id="mainNavbar" className="navbar bg-light navbar-expand-md py-1 px-2 bc">
+            <nav id="mainNavbar" className="navbar bg-light navbar-expand-md py-1 px-2">
                 <a className="navbar-brand nav-margin home-title" href="/">Clicked</a>
 
                 <div>

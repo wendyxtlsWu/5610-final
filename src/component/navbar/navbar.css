@@ -6,11 +6,12 @@
     margin-right: 15px;
 }
 
-.footer-bottom {
-    background-color:#2e2d2d;
-    margin-left: -13px;
-    margin-right: -13px;
-}
+
+/*.footer-bottom {*/
+/*    background-color:#2e2d2d;*/
+/*    margin-left: -13px;*/
+/*    margin-right: -13px;*/
+/*}*/
 
 .center {
     text-align: center;
@@ -20,12 +21,12 @@
     color: #61dafb;
 }
 
-.bc {
-    background-color: white;
-}
 
 .home-title {
     color: black;
     font-family: "Gill Sans", sans-serif;
     font-weight: bold;
 }
+
+
+>>>>>>> eb8c1990f06374931fb844079187f6fa5b494263
