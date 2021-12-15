@@ -1,0 +1,23 @@
+.review-info {
+    font-family: "Gill Sans", sans-serif;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.review-button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.review-content {
+    font-family: "Gill Sans", sans-serif;
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.review-title {
+    font-size: 50px;
+    color: #61dafb;
+    font-family: "Gill Sans", sans-serif;
+    margin-top: 10px;
+}
