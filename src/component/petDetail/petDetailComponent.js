@@ -1,5 +1,5 @@
 import React from 'react';
-// import petDetail from './petDetail.css';
+import petDetail from './petDetail.css';
 import reviewService from "../../service/reviewService";
 import applicationService from "../../service/applicationService";
 import petService from "../../service/petService";
@@ -78,7 +78,7 @@ class PetDetailComponent extends React.Component {
                                 {console.log("details", this.state.details)}
                                 {/*{JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?*/}
                                 { this.state.details && this.state.details.photos &&
-                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="auto"
+                                    <img className="card-img-top" src={this.state.details.photos[0].large} height="620px"
                                          width="auto" alt="Oops!  lost!"/>
                                 }
 
@@ -93,11 +93,11 @@ class PetDetailComponent extends React.Component {
                                     <li className="list-group-item">Size: {this.state.details.size}</li>
                                 </ul>
                             </div>
-                            <h4 className="review-title mt-3">Comments</h4>
+                            <h5 className="title mt-3">Comments</h5>
                             <div className="row">
                                 {
                                     this.state.reviews.length === 0 &&
-                                    <h6 className="review-title review-subtitle">No comments yet!
+                                    <h6 className="comments-title review-subtitle">No comments yet!
                                         Be the first to comment! ( <a href={"/login"}>Login</a>  required)
                                     </h6>
                                 }
@@ -159,7 +159,7 @@ class PetDetailComponent extends React.Component {
                         </div>
 
                         <div className="col-3">
-                            <h4 className="text-center">Applications for {this.state.details.name}</h4>
+                            <h4 className="text-center app-title">Applications for {this.state.details.name}</h4>
                             {
                                 this.state.applications.length === 0 &&
                                     <h6 className="text-center tips">No applications yet! Be the first to apply! ( <a href={"/login"}>Login</a>  required)</h6>
