@@ -1,9 +1,9 @@
 import React from 'react';
-import petDetail from './petDetail.css';
+// import petDetail from './petDetail.css';
 import reviewService from "../../service/reviewService";
 import applicationService from "../../service/applicationService";
 import petService from "../../service/petService";
-import FooterComponent from "../navbar/footerComponent";
+// import FooterComponent from "../navbar/footerComponent";
 
 class PetDetailComponent extends React.Component {
     state = {
@@ -75,11 +75,11 @@ class PetDetailComponent extends React.Component {
                     <div className="row" >
                         <div className="col-9">
                             <div className="card col-margin-left">
-                                {/*{console.log("details", this.state.details)}*/}
+                                {console.log("details", this.state.details)}
                                 {/*{JSON.stringify(this.state.details) !== '{}' && this.state.details.photos.length > 0 ?*/}
                                 { this.state.details && this.state.details.photos &&
                                     <img className="card-img-top" src={this.state.details.photos[0].large} height="550px"
-                                         width="auto"/>
+                                         width="auto" alt="Oops!  lost!"/>
                                 }
 
                                 <div className="card-body">
@@ -93,11 +93,13 @@ class PetDetailComponent extends React.Component {
                                     <li className="list-group-item">Size: {this.state.details.size}</li>
                                 </ul>
                             </div>
-                            <h4 className="review-title">Reviews</h4>
+                            <h4 className="review-title mt-3">Comments</h4>
                             <div className="row">
                                 {
                                     this.state.reviews.length === 0 &&
-                                    <h4 className="review-title review-subtitle">No Review</h4>
+                                    <h6 className="review-title review-subtitle">No comments yet!
+                                        Be the first to comment! ( <a href={"/login"}>Login</a>  required)
+                                    </h6>
                                 }
                                 {
                                     this.state.reviews && this.state.reviews.map((review, i) =>
@@ -112,7 +114,7 @@ class PetDetailComponent extends React.Component {
                                                 </h5>
                                                 }
                                                 {
-                                                    this.props.currentUser.username == '' &&
+                                                    this.props.currentUser.username === '' &&
                                                     <h5 className="card-title">
 
                                                         {review.username}
@@ -157,20 +159,21 @@ class PetDetailComponent extends React.Component {
                         </div>
 
                         <div className="col-3">
+                            <h4 className="text-center">Applications for {this.state.details.name}</h4>
                             {
                                 this.state.applications.length === 0 &&
-                                    <p className="ml-5">No Applications</p>
+                                    <h6 className="text-center">No applications yet! Be the first to apply! ( <a href={"/login"}>Login</a>  required)</h6>
                             }
 
                             { this.state.applications.length !== 0 && this.state.applications.map((application, i) =>
-                                <a className="list-group-item col-margin-right">{application.username}</a>)
+                                <span className="list-group-item col-margin-right">{application.username}</span>)
                             }
 
 
                             { this.props.currentUser.username !== '' &&
 
                                 <div className="col-margin-right">
-                                    <button className="apply-button btn-primary"
+                                    <button className="apply-button btn btn-block btn-primary"
                                             onClick={() => this.createNewApplication({
                                                 userId: this.props.currentUser.userId,
                                                 username: this.props.currentUser.username,

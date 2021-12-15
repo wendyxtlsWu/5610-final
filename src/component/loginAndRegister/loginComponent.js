@@ -1,6 +1,6 @@
 import React from 'react';
 import {login} from "../../service/userService";
-import FooterComponent from "../navbar/footerComponent";
+// import FooterComponent from "../navbar/footerComponent";
 
 
 class LoginComponent extends React.Component {
@@ -9,8 +9,8 @@ class LoginComponent extends React.Component {
             .then(currentUser => {
                 if (currentUser != null) {
                     // after the user logged in, update current user and make it accessible to all other components
-                    this.props.setCurrentUser(currentUser)
-                    this.props.history.push("/")
+                    this.props.setCurrentUser(currentUser);
+                    this.props.history.goBack();
                 }
             })
 
